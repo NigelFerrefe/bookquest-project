@@ -2,17 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; /* Corrected this to 'border-box' */
-  --font-primary: "Montserrat", sans-serif;
-  --font-secondary: "Segoe UI", sans-serif; /* Added 'sans-serif' */
-  --font-extra: "Just Another Hand", cursive;
-  --color-background-main: #FFF8EA;
-  --color-background-secondary: #0194C4;
+
 }
 
 
 #root {
   min-height: 100vh;
-
+  --font-primary: "Montserrat", sans-serif;
+  --font-secondary: "Segoe UI", sans-serif; /* Added 'sans-serif' */
+  --font-extra: "Just Another Hand", cursive;
+  --color-background-main: #FFF8EA;
+  --color-background-secondary: #0194C4;
 }
 
 h1,h2,h3,h4,h5,h6 {

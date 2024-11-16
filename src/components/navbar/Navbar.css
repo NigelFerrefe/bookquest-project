@@ -2,10 +2,10 @@
   background-color: var(--color-background-main);
   height: 8rem;
   max-height: 8rem;
-  #logo-img {
-    width: 15rem;
-  }
-  border: 1px solid black;
+
+}
+#logo-img {
+  width: 15rem;
 }
 
 .topnav {
@@ -26,9 +26,12 @@
   flex-direction: row;
   justify-content: space-evenly;
   list-style: none;
+  font-family: var(--font-secondary);
   font-size: 2rem;
   gap: 2rem;
+
 }
+
 .link {
   text-decoration: none;
   color: black;
@@ -43,4 +46,42 @@
 
 .link-active {
   color: #0194c4; 
+}
+
+/*----------------RESPONSIVE QUERY FOR TABLETS----------------*/
+@media (min-width: 650px) and (max-width: 1024px) {
+  .navbar-container {
+    flex-direction: column;
+  }
+  .navbar-links {
+    font-size: 1.5rem;
+    justify-content: space-around;
+    
+  }
+  #profile-icon{
+    position: relative;
+    bottom: 0.6rem;
+  }
+}
+
+
+/*----------------RESPONSIVE QUERY FOR DESKTOP----------------*/
+@media(width > 1025px) {
+  .navbar-links {
+    font-size: 1.5rem;
+    justify-content: right;
+    padding-right: 5rem;
+    gap: 5rem;
+    position: relative;
+    bottom: 2.8rem;
+  }
+  #logo-img {
+    position: relative;
+    right: 40rem;
+    top: 1rem;
+  }
+  #profile-icon{
+    position: relative;
+    bottom: 0.5rem;
+  }
 }

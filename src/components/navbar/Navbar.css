@@ -2,7 +2,6 @@
   background-color: var(--color-background-main);
   height: 8rem;
   max-height: 8rem;
-
 }
 #logo-img {
   width: 15rem;
@@ -14,7 +13,6 @@
   justify-content: space-evenly;
   align-content: center;
   text-align: center;
-  
 }
 
 .menu-btn {
@@ -26,26 +24,23 @@
   flex-direction: row;
   justify-content: space-evenly;
   list-style: none;
-  font-family: var(--font-secondary);
-  font-size: 2rem;
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
   gap: 2rem;
-
 }
 
 .link {
   text-decoration: none;
   color: black;
-  transition: color 0.3s ease; 
+  transition: color 0.3s ease;
 }
-
 
 .link:hover {
   color: #0194c4;
 }
 
-
-.link-active {
-  color: #0194c4; 
+.active {
+  color: #0194c4;
 }
 
 /*----------------RESPONSIVE QUERY FOR TABLETS----------------*/
@@ -54,34 +49,32 @@
     flex-direction: column;
   }
   .navbar-links {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     justify-content: space-around;
-    
   }
-  #profile-icon{
+  #profile-icon {
     position: relative;
-    bottom: 0.6rem;
+    bottom: 0.4rem;
   }
+  
 }
 
-
 /*----------------RESPONSIVE QUERY FOR DESKTOP----------------*/
-@media(width > 1025px) {
+@media (width > 1025px) {
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+  }
   .navbar-links {
-    font-size: 1.5rem;
-    justify-content: right;
-    padding-right: 5rem;
+    font-size: 2rem;
+    justify-content: flex-end;
     gap: 5rem;
-    position: relative;
-    bottom: 2.8rem;
+    padding-right: 5rem;
   }
+
   #logo-img {
-    position: relative;
-    right: 40rem;
-    top: 1rem;
-  }
-  #profile-icon{
-    position: relative;
-    bottom: 0.5rem;
+    width: 20rem;
   }
 }

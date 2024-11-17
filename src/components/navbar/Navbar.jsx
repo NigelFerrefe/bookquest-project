@@ -10,14 +10,9 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
 
-  const handleMenu = (e) => {
-    e.preventDefault();
-    setIsOpen(!isOpen);
-  };
+  const handleMenu = () => setIsOpen(!isOpen);
 
-  const handleCloseMenu = () => {
-    setIsOpen(false); // Always close the menu
-  };
+  const handleCloseMenu = () => setIsOpen(false); // Always close the menu
 
   // Handle screen size changes
   useEffect(() => {
@@ -65,8 +60,12 @@ function Navbar() {
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="/profile" onClick={handleCloseMenu}>
-              <img 
+            <NavLink
+              className="link profile-img"
+              to="/profile"
+              onClick={handleCloseMenu}
+            >
+              <img
                 id="profile-icon"
                 width={"35rem"}
                 src={profileIcon}

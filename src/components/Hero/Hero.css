@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Just+Another+Hand&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.hero {
+  background-image: url(../../assets//HeroImage.png);
+  background-position: center;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+
+
+  h1 {
+    font-family: "Just Another Hand";
+    font-size: 3rem;
+  }
+
+  .add-book-button {
+    border-style: none;
+    width: 12rem;
+    padding: 15px;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    border-radius: 12px;
+    font-family: var(--font-primary);
+    margin-left: 40px;
+  }
+  .add-book-button:hover {
+    transform: scale(1.05);
+    background-color: rgb(84, 84, 84);
+    cursor: pointer;
+  }
+}
+
+@media (width >= 650px) and (width <= 1250px) {
+  .hero{
+    h1 {
+      padding-left: 70px;
+      font-size: 3.5rem;
+    }
+
+    .add-book-button {
+      margin-left: 130px;
+    }
+  }
+}
+
+@media (min-width: 1250px) {
+
+  .hero{
+    height: 650px;
+
+    h1 {
+      padding-left: 100px;
+      font-size: 4rem;
+    }
+
+    .add-book-button {
+      margin-left: 160px;
+      font-size: 18px;
+    }
+  }
+}

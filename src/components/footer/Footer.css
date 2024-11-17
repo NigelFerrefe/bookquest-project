@@ -3,11 +3,14 @@
   flex-direction: column;
   align-items: center;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  position: fixed;
+  position: static;
+  left: 0;
   bottom: 0;
   width: 100vw;
   padding-top: 10px;
   font-family: var(--font-primary);
+  height: 5.5rem;
+  margin-top: 100px;
 
   .made-by {
     display: flex;
@@ -29,8 +32,8 @@
   background-color: rgb(253, 250, 250);
   width: 100vw;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 @media (width > 650px){

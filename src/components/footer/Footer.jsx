@@ -9,12 +9,12 @@ function Footer() {
       <div className="made-by">
         <div className="githublogo">
           <a href="https://github.com/NigelFerrefe/bookquest-project">
-            <img width={50} src={GithubLogo} alt="" />
+            <img width={40} src={GithubLogo} alt="" />
           </a>
         </div>
         <div className="logo">
           <NavLink to="/">
-            <img src={Logo} alt="book-quest-logo" />
+            <img width={160} src={Logo} alt="book-quest-logo" />
           </NavLink>
         </div>
       </div>

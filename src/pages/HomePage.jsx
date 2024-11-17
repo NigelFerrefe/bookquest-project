@@ -1,3 +1,4 @@
+import Hero from "../components/Hero/Hero";
 import "./HomePage.css";
 
 function HomePage() {
@@ -11,6 +12,8 @@ function HomePage() {
         veritatis soluta accusantium sequi quo eaque quibusdam possimus non
         quia. Necessitatibus, enim.
       </p>
+
+      <Hero />
     </div>
   );
 }

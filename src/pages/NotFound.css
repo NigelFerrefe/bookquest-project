@@ -1,23 +1,98 @@
 .container-error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    border: 1px solid red;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border: 1px solid red;
+  padding: 1rem;
 }
 
 .container-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  border: 1px solid green;
 }
 .quote {
-    text-align: end;
+  text-align: center;
+  font-family: var(--font-secondary);
+
+  blockquote {
+    font-weight: bold;
+    font-style: oblique;
+  }
+}
+
+#not-found-btn {
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-family: var(--font-primary);
+  width: 18rem;
+  height: 3rem;
+  border-width: 1px;
+  color: var(--color-background-main);
+  border-radius: 16px;
+  background: linear-gradient(var(--color-background-secondary), #015773);
+  border: none;
+  transition: background 0.3s ease, font-size 0.3s ease;
+}
+
+#not-found-btn:hover {
+  background: linear-gradient(#015773, var(--color-background-secondary));
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
 #not-found-img {
-    width: 100%;
+  width: 50%;
+}
+
+/*----------------RESPONSIVE QUERY FOR TABLETS----------------*/
+@media (min-width: 650px) and (max-width: 1024px) {
+
+  .container-text {
+    font-size: 1.1rem;
+    
+  }
+  blockquote {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  #not-found-btn {
+    font-size: 1.2rem;
+    width: 22rem;
+  }
+  #not-found-btn:hover {
+    font-size: 1.4rem;
+  }
+  #not-found-img {
+    width: 55%;
+  }
+}
+
+/*----------------RESPONSIVE QUERY FOR DESKTOP----------------*/
+@media(width > 1025px) {
+    .container-text {
+        font-size: 1.4rem;
+      }
+      blockquote {
+        font-size: 1.7rem;
+      }
+      h3 {
+        font-size: 1.7rem;
+      }
+      #not-found-btn {
+        font-size: 1.5rem;
+        width: 28rem;
+      }
+      #not-found-btn:hover {
+        font-size: 1.8rem;
+      }
+      #not-found-img {
+        width: 60%;
+      }
 }

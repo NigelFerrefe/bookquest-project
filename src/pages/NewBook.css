@@ -1,0 +1,144 @@
+.add-book {
+  display: flex;
+  flex-direction: column;
+  background-image: url(/src/assets/BookBackground.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.form {
+  z-index: 999;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+  padding: 80px 50px 80px 50px;
+  border: 1px solid black;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 20px;
+  gap: 12px;
+  font-family: var(--font-primary);
+
+
+  h2 {
+    font-size: 27px;
+    font-family: var(--font-primary);
+    color: #262626 ;
+    padding-bottom: 20px;
+  }
+
+  span {
+    color: red;
+  }
+
+  label {
+    font-size: 20px;
+    align-self: flex-start;
+  }
+
+  input {
+    width: 280px;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid #0094C3;
+  }
+
+  textarea {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    min-height: 70px;
+    border: 2px solid #0094C3;
+  }
+
+  select {
+    width: 280px;
+    padding: 15px;
+    text-align: center;
+    color: #0094C3;
+    border-radius: 12px;
+    border: 2px solid #0094C3;
+    font-size: 20px;
+
+  }
+  .submit-button {
+    padding: 20px;
+    text-align: center;
+    width: 230px;
+    border-radius: 20px;
+    border-style: none ;
+    background-color: #0094C3;
+    font-size: 23px;
+    color: white;
+    margin-left: 20px;
+    margin-top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  .submit-button:hover {
+    background-color: #1cbbeb;
+    cursor: pointer;
+  }
+
+}
+
+@media (width >= 650px) and (width <= 1250px) {
+  .form {
+    width: 600px;
+
+    input {
+      width: 500px;
+    }
+    textarea {
+      width: 500px;
+      min-width: 500px ;
+      max-width: 500px ;
+    }
+
+    select {
+      width: 500px;
+    }
+
+    .submit-button {
+      width: 400px;
+      margin-left: 40px;
+    }
+  }
+}
+
+@media (min-width: 1250px) {
+  .form {
+    width: 800px;
+
+    input {
+      width: 700px;
+    }
+    textarea {
+      width: 700px;
+      min-width: 700px ;
+      max-width: 700px ;
+    }
+
+    select {
+      width: 700px;
+    }
+
+    .submit-button {
+      width: 600px;
+      margin-left: 40px;
+    }
+  }
+
+}
+
+

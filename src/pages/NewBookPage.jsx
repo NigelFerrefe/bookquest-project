@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import supabase from "../supabase/config";
+import "./NewBook.css"
 
 
 const initialFormData = {
@@ -79,23 +80,29 @@ function NewBookPage() {
   return (
     <>
       <div className="add-book">
-        <h1>Add a Book</h1>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="title">Title: </label>
+        <form className="form" onSubmit={handleSubmit}>
+          <h2>Add Your Book</h2>
+          <label htmlFor="title">
+            <span>*</span> Title:
+          </label>
           <input
             onChange={handleOnChange}
             value={formData.title}
             type="text"
             id="title"
+            required
           />
-          <label htmlFor="author">Author: </label>
+          <label htmlFor="author">
+            <span>*</span> Author:
+          </label>
           <input
             onChange={handleOnChange}
             value={formData.author}
             type="text"
             id="author"
+            required
           />
-        {/* <label htmlFor="genre">Genre: </label>
+          {/* <label htmlFor="genre">Genre: </label>
         <select id="genre" value={formData.genre} onChange={handleOnChange}>
         <option value=""> Select a Genre </option>
             {genres.map((genre, index) => {
@@ -120,7 +127,7 @@ function NewBookPage() {
             id="language"
           />
           <label htmlFor="description">Description: </label>
-          <input
+          <textarea
             onChange={handleOnChange}
             value={formData.description}
             type="text"
@@ -133,7 +140,9 @@ function NewBookPage() {
             type="number"
             id="price"
           />
-          <label htmlFor="pages">Pages: </label>
+          <label classname="label" htmlFor="pages">
+            Pages:{" "}
+          </label>
           <input
             onChange={handleOnChange}
             value={formData.pages}
@@ -143,6 +152,7 @@ function NewBookPage() {
           <label htmlFor="image">Image URL: </label>
           <input
             onChange={handleOnChange}
+            value={formData.image}
             type="text"
             id="image"
           />
@@ -151,7 +161,9 @@ function NewBookPage() {
             <option value="novel">Novel</option>
             <option value="essay">Essay</option>
           </select>
-          <button type="submit">Add Book</button>
+          <button className="submit-button" type="submit">
+            Add Book
+          </button>
         </form>
       </div>
     </>

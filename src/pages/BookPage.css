@@ -1,0 +1,141 @@
+.title {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.detail-img {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  align-items: center;
+
+  img {
+    width: 300px;
+  }
+  .tags {
+    display: flex;
+    padding: 0 1rem;
+    gap: 15px;
+
+    button {
+      display: inline-block;
+      font-size: 0.6rem;
+      padding: 0.5em 1em;
+      border-radius: 1em;
+      border: none;
+      background-color: #015773;
+      color: #fff;
+      margin: 0.5em;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    button:hover {
+      background-color: #343434;
+      box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+    }
+  }
+}
+
+.detail-text {
+  padding: 0 1rem;
+}
+
+.back-btn-detail {
+  display: flex;
+  justify-content: right;
+  padding: 1rem 2rem;
+}
+#back-btn-detail {
+  font-size: 0.8rem;
+  font-family: var(--font-primary);
+  width: 10rem;
+  height: 3rem;
+  border-width: 1px;
+  color: var(--color-background-main);
+  border-radius: 16px;
+  background: linear-gradient(var(--color-background-secondary), #015773);
+  border: none;
+  transition: background 0.3s ease, font-size 0.3s ease;
+}
+
+#back-btn-detail:hover {
+  background: linear-gradient(#015773, var(--color-background-secondary));
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/*----------------RESPONSIVE QUERY FOR TABLETS----------------*/
+@media (min-width: 650px) and (max-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .detail-img {
+    .tags {
+      button {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .detail-text {
+    font-size: 1.2rem;
+  }
+
+  #back-btn-detail {
+    font-size: 1rem;
+    width: 12rem;
+  }
+
+  #back-btn-detail:hover {
+    font-size: 1.2rem;
+  }
+}
+
+/*----------------RESPONSIVE QUERY FOR DESKTOP----------------*/
+@media (width > 1025px) {
+  .details-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1rem;
+  }
+
+  .detail-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .title {
+    font-size: 3rem;
+  }
+
+  .detail-img {
+    .tags {
+      button {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .detail-text {
+    font-size: 1.3rem;
+  }
+
+  #back-btn-detail {
+    font-size: 1.2rem;
+    width: 14rem;
+  }
+
+  #back-btn-detail:hover {
+    font-size: 1.4rem;
+  }
+}

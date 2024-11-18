@@ -1,0 +1,52 @@
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; 
+  width: 100%; 
+  max-width: 800px; 
+  margin: 0 auto; 
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the track container */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  flex: 1 0 auto;
+  list-style: none;
+  margin: 0 10px;
+  text-align: center; /* Center content inside the slide */
+}
+
+.carousel-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; /* Ensure buttons are on top of the carousel */
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: #eee;
+}

@@ -12,7 +12,8 @@ const initialFormData = {
   price: 0,
   pages: 0,
   image:"",
-  type_of_book: "novel"
+  type_of_book: "novel",
+  isBought: false
 };
 
 function NewBookPage() {

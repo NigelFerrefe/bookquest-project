@@ -5,7 +5,7 @@ import "./HomePage.css";
 
 function HomePage() {
   return (
-    <div>
+    <div className="main-container">
       <Hero />
       <AllBooks/>
       {/* <BookListFiltered/> */}

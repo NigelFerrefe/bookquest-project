@@ -4,6 +4,7 @@ import BookCard from "../booksCard/BookCard.jsx";
 import BookFilterCard from "../bookFilteredCard/BookFilterCard.jsx";
 import { Link } from "react-router-dom";
 import "./BookList.css";
+import GenreFilter from "../GenreFilter/GenreFilter.jsx";
 
 function AllBooks() {
   const [allBooks, setAllBooks] = useState([]);
@@ -97,8 +98,8 @@ function AllBooks() {
         </div>
       </div>
       <div>
-        <h2>Mystery books for components</h2>
-        <p>Extra</p>
+        <h2>Search your books by your favourites genre</h2>
+        <GenreFilter/>
       </div>
       <div>
         <h2>Filtered Books</h2>

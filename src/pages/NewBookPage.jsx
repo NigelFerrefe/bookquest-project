@@ -58,6 +58,11 @@ function NewBookPage() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    formData.genre =
+      typeof formData.genre === "string"
+        ? formData.genre.split(",")
+        : formData.genre;
+
     supabase
       .from("books")
       .insert([formData])
@@ -96,16 +101,14 @@ function NewBookPage() {
             id="author"
             required
           />
-          {/* <label htmlFor="genre">Genre: </label>
-        <select id="genre" value={formData.genre} onChange={handleOnChange}>
-        <option value=""> Select a Genre </option>
-            {genres.map((genre, index) => {
-            <option key={index} value={genre}>
-                {genre}
-            </option>
-            })}
-        </select> */}
-
+          <label htmlFor="genre">Genre:</label>
+          <input
+            type="text"
+            id="genre"
+            value={formData.genre}
+            onChange={handleOnChange}
+          />
+          <small>Separate each genre with commas</small>
           <label htmlFor="publisher">Publisher: </label>
           <input
             onChange={handleOnChange}
@@ -155,11 +158,9 @@ function NewBookPage() {
             <option value="novel">Novel</option>
             <option value="essay">Essay</option>
           </select>
-            <button className="submit-button" type="submit">
-            <NavLink to= "/">
-              Add Book
-            </NavLink>
-            </button>
+          <button className="submit-button" type="submit">
+            <NavLink to="/">Add Book</NavLink>
+          </button>
         </form>
       </div>
     </>

@@ -2,7 +2,8 @@ import supabase from "../../supabase/config.js";
 import { useState, useEffect } from "react";
 import BookCard from "../booksCard/BookCard.jsx";
 import BookFilterCard from "../bookFilteredCard/BookFilterCard.jsx";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import SearchBar from "../searchbar/SearchBar.jsx";
 import "./BookList.css";
 
 function AllBooks() {
@@ -10,22 +11,43 @@ function AllBooks() {
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [currentSlideAllBooks, setCurrentSlideAllBooks] = useState(0);
   const [currentSlideFilteredBooks, setCurrentSlideFilteredBooks] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams()
 
   const booksPerSlidePhone = 1; // Number of books on phones screen
   const booksPerSlideTablet = 3; // Number of books on tablets screen
   const booksPerSlideDesktop = 4; // Number of books on desktops screen
 
   async function getAllBooks() {
+    const queryname = searchParams.get("title");
+
+    console.log("this is the query name: " , queryname)
+    let response;
+
+
     try {
-      const response = await supabase
+
+      if (queryname) {
+        response = await supabase
         .from("books")
         .select("*")
-        .eq("isBought", false)
-        .order("id", { ascending: false });
+        .ilike("title", `%${queryname}`)
 
-      setAllBooks(response.data);
-    } catch (e) {
-      console.log("Something went wrong", e);
+
+      } else {
+        response = await supabase
+          .from("books")
+          .select("*")
+          .eq("isBought", false)
+          .order("id", { ascending: false });
+      }
+
+      if (response.data.length === 0){
+        alert("No Results Found")
+      } else {
+        setAllBooks(response.data);
+      }
+    } catch (error) {
+      console.log("Something went wrong", error);
     }
   }
 
@@ -38,18 +60,18 @@ function AllBooks() {
         .order("id", { ascending: false });
 
       setFilteredBooks(response.data);
-    } catch (e) {
-      console.log("Something went wrong", e);
+    } catch (error) {
+      console.log("Something went wrong", error);
     }
   }
 
   useEffect(() => {
     getAllBooks();
     getFilteredBooks();
-  }, []);
+  }, [searchParams]);
 
-  const totalSlidesAllBooks = Math.ceil(allBooks.length / booksPerSlidePhone);
-  const totalSlidesFilteredBooks = Math.ceil(filteredBooks.length / booksPerSlidePhone);
+  const totalSlidesAllBooks = Math.ceil(allBooks.length / booksPerSlideDesktop);
+  const totalSlidesFilteredBooks = Math.ceil(filteredBooks.length / booksPerSlideDesktop);
 
   const handleNextAllBooks = () => {
     setCurrentSlideAllBooks((prev) => (prev + 1) % totalSlidesAllBooks);
@@ -69,8 +91,9 @@ function AllBooks() {
 
   return (
     <>
+        <SearchBar className="search-bar" />
       <div>
-        <h2>BookList</h2>
+        <h2>All Books</h2>
         <div className="carousel-container">
           <button onClick={handlePrevAllBooks} className="carousel-button prev-button">
             ‹
@@ -79,8 +102,8 @@ function AllBooks() {
             <ul className="carousel-track">
               {allBooks
                 .slice(
-                  currentSlideAllBooks * booksPerSlidePhone,
-                  (currentSlideAllBooks + 1) * booksPerSlidePhone
+                  currentSlideAllBooks * booksPerSlideDesktop,
+                  (currentSlideAllBooks + 1) * booksPerSlideDesktop
                 )
                 .map((book) => (
                   <li key={book.id} className="carousel-slide">
@@ -101,7 +124,7 @@ function AllBooks() {
         <p>Extra</p>
       </div>
       <div>
-        <h2>Filtered Books</h2>
+        <h2>Your Books</h2>
         <div className="carousel-container">
           <button onClick={handlePrevFilteredBooks} className="carousel-button prev-button">
             ‹
@@ -110,8 +133,8 @@ function AllBooks() {
             <ul className="carousel-track">
               {filteredBooks
                 .slice(
-                  currentSlideFilteredBooks * booksPerSlidePhone,
-                  (currentSlideFilteredBooks + 1) * booksPerSlidePhone
+                  currentSlideFilteredBooks * booksPerSlideDesktop,
+                  (currentSlideFilteredBooks + 1) * booksPerSlideDesktop
                 )
                 .map((filteredBook) => (
                   <li key={filteredBook.id} className="carousel-slide">

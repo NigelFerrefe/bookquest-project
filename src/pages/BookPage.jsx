@@ -2,9 +2,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import supabase from "../supabase/config";
 import "./BookPage.css";
+import EditForm from "../components/editForm/EditForm";
 
 function BookDetails() {
-  const [bookDetails, setBookDetails] = useState(null); // Initialize as null
+  const [bookDetails, setBookDetails] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
   const { bookId } = useParams();
   const navigate = useNavigate();
 
@@ -14,18 +16,18 @@ function BookDetails() {
         .from("books")
         .select("*")
         .eq("id", bookId)
-        .single(); // Use single to get one book
+        .single();
 
       setBookDetails(response.data);
     } catch (error) {
       console.log(error);
-      navigate("/not-found"); // Redirect if book not found or error occurs
+      navigate("/not-found");
     }
   }
 
   useEffect(() => {
     getBookDetail();
-  }, [bookId]); // Add bookId as a dependency
+  }, [bookId]);
 
   if (!bookDetails) return <div>Loading...</div>;
 
@@ -45,9 +47,9 @@ function BookDetails() {
   const handleClick = (e) => {
     e.preventDefault();
     if (!bookDetails.isBought) {
-      navigate("/");
+      navigate("/"); // Navigate based on whether the book is bought
     } else {
-      navigate("/fs");
+      navigate("/");
     }
   };
 
@@ -57,7 +59,6 @@ function BookDetails() {
       <div className="details-container">
         <div className="detail-img">
           <img src={image} alt={`Img of ${title}`} />
-          {/* <p className="tags">{genre.join(" ").toUpperCase()}</p> */}
           <p className="tags">
             {Array.isArray(genre) &&
               genre.map((eachGenre, index) => (
@@ -97,13 +98,33 @@ function BookDetails() {
               )}
             </p>
           </div>
-          <div className="btn-details">
-            <button id="back-btn-detail">
-              Edit Details
-            </button>
-            <button id="back-btn-detail" onClick={handleClick}>
-              Back to your list
-            </button>
+          <div className="div-btn-details">
+            {!isEditing ? (
+              <div>
+                <button
+                  className="btn-detail"
+                  onClick={() => setIsEditing(true)}
+                >
+                  Edit details
+                </button>
+              </div>
+            ) : (
+              <EditForm
+                bookDetails={bookDetails}
+                setBookDetails={setBookDetails}
+                setIsEditing={setIsEditing}
+              />
+            )}
+            {/* <div className="special-btns"> */}
+              <div>
+                <button className="btn-detail" onClick={handleClick}>
+                  Back to your list
+                </button>
+              </div>
+              <div>
+                <button className="btn-detail">Detele book</button>
+              </div>
+            {/* </div> */}
           </div>
         </div>
       </div>

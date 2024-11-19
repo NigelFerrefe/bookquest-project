@@ -1,0 +1,37 @@
+.edit-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 2rem;
+  transition: transform 0.3s ease-in-out;
+  background-color: rgb(216, 216, 216);
+}
+
+/* Style for the buttons inside the form */
+.btns-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.7rem 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#green-btn {
+  background-color: green;
+}
+#red-btn {
+    background-color: red;
+  }
+button:hover {
+  background-color: #014f59;
+}

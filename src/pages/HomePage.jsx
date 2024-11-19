@@ -8,7 +8,7 @@ function HomePage() {
     <div>
       <Hero />
       <AllBooks/>
-      {/* <BookListFiltered/> */}
+      
     </div>
   );
 }

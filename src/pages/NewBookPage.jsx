@@ -20,7 +20,7 @@ const initialFormData = {
 function NewBookPage() {
   const [formData, setFormData] = useState(initialFormData);
 
-  //   const [genres, setGenres] = useState([])
+  // const genres = []
 
   //     useEffect(() => {
   //         async function fetchGenres() {

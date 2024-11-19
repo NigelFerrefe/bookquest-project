@@ -1,14 +1,7 @@
 import notFoundImg from "../assets/not-found-book.png";
 import "./NotFound.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 function NotFoundPage() {
-  const navigate = useNavigate()
-
-  const handleClick = (e) => {
-    e.preventDefault()
-    navigate("/")
-  }
-  
   return (
     <>
       <div className="container-error">
@@ -28,7 +21,9 @@ function NotFoundPage() {
           <p>The next great discovery awaits.</p>
           <p>Let&apos;s find it.</p>
         </div>
-        <button id="not-found-btn" onClick={handleClick}>Embark on a new adventure</button>
+        <NavLink to= "/">
+          <button id="not-found-btn">Embark on a new adventure</button>
+        </NavLink>
       </div>
     </>
   );

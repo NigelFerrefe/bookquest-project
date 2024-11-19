@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import supabase from "../supabase/config";
-import "./NewBook.css"
-
+import { NavLink } from "react-router-dom";
+import "./NewBook.css";
 
 const initialFormData = {
   title: "",
@@ -12,70 +12,64 @@ const initialFormData = {
   description: "",
   price: 0,
   pages: 0,
-  image:"",
+  image: "",
   type_of_book: "novel",
-  isBought: false
+  isBought: false,
 };
 
 function NewBookPage() {
   const [formData, setFormData] = useState(initialFormData);
-//   const [genres, setGenres] = useState([])
 
-//     useEffect(() => {
-//         async function fetchGenres() {
-//             try {
-//                 const {data, error} = await supabase.from("books").select("genre");
-//                 if (error) throw error;
-//                 setGenres(data);
-//             } catch (error) {
-//                 console.log(error)
-//             }
-//         }
-//         fetchGenres();
-//     }, [])
+  //   const [genres, setGenres] = useState([])
 
-      async function getAllBooks() {
-        try {
-          let response;
-          response = await supabase
-            .from("books")
-            .select("*")
-            .eq("isBought", false);
-        } catch (e) {
-          console.log("Something went wrong", e);
-        }
-      }
+  //     useEffect(() => {
+  //         async function fetchGenres() {
+  //             try {
+  //                 const {data, error} = await supabase.from("books").select("genre");
+  //                 if (error) throw error;
+  //                 setGenres(data);
+  //             } catch (error) {
+  //                 console.log(error)
+  //             }
+  //         }
+  //         fetchGenres();
+  //     }, [])
 
-       function handleOnChange(e) {
-        const value =
-            e.target.type === "number"
-            ? Number(e.target.value)
-            : e.target.value;
-            const field = e.target.id;
-
-            setFormData({
-            ...formData,
-            [field]: value
-        })
-       }
-
-
-
-    async function handleSubmit(e) {
-      e.preventDefault();
-
-        supabase
-        .from("books")
-        .insert([formData])
-        .then((res) => {
-            console.log(res);
-            getAllBooks();
-            setFormData(initialFormData);
-        })
-        .catch ((error) => {
-            console.log(error);
-        })
+  async function getAllBooks() {
+    try {
+      let response;
+      response = await supabase.from("books").select("*").eq("isBought", false);
+    } catch (e) {
+      console.log("Something went wrong", e);
     }
+  }
+
+  function handleOnChange(e) {
+    const value =
+      e.target.type === "number" ? Number(e.target.value) : e.target.value;
+    const field = e.target.id;
+
+    setFormData({
+      ...formData,
+      [field]: value,
+    });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    supabase
+      .from("books")
+      .insert([formData])
+      .then((res) => {
+        console.log(res);
+        getAllBooks();
+        setFormData(initialFormData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   return (
     <>
@@ -161,9 +155,11 @@ function NewBookPage() {
             <option value="novel">Novel</option>
             <option value="essay">Essay</option>
           </select>
-          <button className="submit-button" type="submit">
-            Add Book
-          </button>
+            <button className="submit-button" type="submit">
+            <NavLink to= "/">
+              Add Book
+            </NavLink>
+            </button>
         </form>
       </div>
     </>

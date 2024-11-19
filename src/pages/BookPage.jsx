@@ -97,7 +97,10 @@ function BookDetails() {
               )}
             </p>
           </div>
-          <div className="back-btn-detail">
+          <div className="btn-details">
+            <button id="back-btn-detail">
+              Edit Details
+            </button>
             <button id="back-btn-detail" onClick={handleClick}>
               Back to your list
             </button>

@@ -6,22 +6,22 @@ function GenreFilter() {
   return (
     <div className="genre-filter-container">
       <div>
-        <Link to="/genre">
+        <Link to="/:genre">
           <img src={crimeGenre} alt="Crime img" />
         </Link>
       </div>
       <div>
-        <Link to="/genre">
+        <Link to="/:genre">
           <img src={crimeGenre} alt="Business img" />
         </Link>
       </div>
       <div>
-        <Link to="/genre">
+        <Link to="/:genre">
           <img src={crimeGenre} alt="History img" />
         </Link>
       </div>
       <div>
-        <Link to="/genre">
+        <Link to="/:genre">
           <img src={crimeGenre} alt="Self-help img" />
         </Link>
       </div>

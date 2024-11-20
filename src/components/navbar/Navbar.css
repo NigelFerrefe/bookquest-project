@@ -1,25 +1,36 @@
 .navbar-container {
   background-color: #ffffff;
-  height: 8rem;
+  height: 7.5rem;
   max-height: 8rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 }
 #logo-img {
-  width: 15rem;
+  width: 14rem;
 }
 
 .topnav {
   padding: 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-content: center;
   text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .menu-btn {
   border: none;
   background: transparent;
+
+  img {
+    width: 40px;
+    height: auto;
+  }
+}
+
+.menu-btn:hover {
+  background-color: transparent;
 }
 .navbar-links {
   display: flex;
@@ -68,15 +79,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 5rem;
+    height: 5rem;
   }
   .navbar-links {
-    font-size: 2rem;
-    justify-content: flex-end;
+    font-size: 1.5rem;
+    justify-content: center;
     gap: 5rem;
     padding-right: 5rem;
   }
 
   #logo-img {
-    width: 20rem;
+    width: 16rem;
   }
 }

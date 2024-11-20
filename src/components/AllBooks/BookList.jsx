@@ -15,8 +15,6 @@ function AllBooks() {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const booksPerSlidePhone = 1; // Number of books on phones screen
-  const booksPerSlideTablet = 3; // Number of books on tablets screen
-  const booksPerSlideDesktop = 4; // Number of books on desktops screen
 
   async function getAllBooks() {
     const queryname = searchParams.get("title");
@@ -71,8 +69,8 @@ function AllBooks() {
     getFilteredBooks();
   }, [searchParams]);
 
-  const totalSlidesAllBooks = Math.ceil(allBooks.length / booksPerSlideDesktop);
-  const totalSlidesFilteredBooks = Math.ceil(filteredBooks.length / booksPerSlideDesktop);
+  const totalSlidesAllBooks = Math.ceil(allBooks.length / booksPerSlidePhone);
+  const totalSlidesFilteredBooks = Math.ceil(filteredBooks.length / booksPerSlidePhone);
 
   const handleNextAllBooks = () => {
     setCurrentSlideAllBooks((prev) => (prev + 1) % totalSlidesAllBooks);
@@ -103,8 +101,8 @@ function AllBooks() {
             <ul className="carousel-track">
               {allBooks
                 .slice(
-                  currentSlideAllBooks * booksPerSlideDesktop,
-                  (currentSlideAllBooks + 1) * booksPerSlideDesktop
+                  currentSlideAllBooks * booksPerSlidePhone,
+                  (currentSlideAllBooks + 4) * booksPerSlidePhone
                 )
                 .map((book) => (
                   <li key={book.id} className="carousel-slide">
@@ -134,8 +132,8 @@ function AllBooks() {
             <ul className="carousel-track">
               {filteredBooks
                 .slice(
-                  currentSlideFilteredBooks * booksPerSlideDesktop,
-                  (currentSlideFilteredBooks + 1) * booksPerSlideDesktop
+                  currentSlideFilteredBooks * booksPerSlidePhone,
+                  (currentSlideFilteredBooks + 3) * booksPerSlidePhone
                 )
                 .map((filteredBook) => (
                   <li key={filteredBook.id} className="carousel-slide">

@@ -1,4 +1,4 @@
-import Logo from "../../assets/BookQuest.png";
+import Logo from "../../assets/BookquestNew.png";
 import GithubLogo from "../../assets/github-mark.png";
 import "./Footer.css";
 import { NavLink } from "react-router-dom";

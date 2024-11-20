@@ -8,8 +8,7 @@ import BookPage from "./pages/BookPage"
 import NewBookPage from "./pages/NewBookPage"
 import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
-
-
+import GenrePage from './pages/GenrePage'
 
 function App() {
 
@@ -22,6 +21,7 @@ function App() {
       <Route path='/about' element={<AboutPage/>}/>
       <Route path='/profile' element={<ProfilePage/>}/>
       <Route path='/details/:bookId' element={<BookPage/>}/>
+      <Route path='/genre/:genre' element={<GenrePage/>}/>
       <Route path='/newbook' element={<NewBookPage/>}/>
       <Route path='*' element={<NotFoundPage/>}/>
     </Routes>

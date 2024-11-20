@@ -5,6 +5,7 @@ import BookFilterCard from "../bookFilteredCard/BookFilterCard.jsx";
 import { Link, useSearchParams } from "react-router-dom";
 import SearchBar from "../searchbar/SearchBar.jsx";
 import "./BookList.css";
+import GenreFilter from "../GenreFilter/GenreFilter.jsx";
 
 function AllBooks() {
   const [allBooks, setAllBooks] = useState([]);
@@ -120,8 +121,8 @@ function AllBooks() {
         </div>
       </div>
       <div>
-        <h2>Mystery books for components</h2>
-        <p>Extra</p>
+        <h2>Search your books by your favourites genre</h2>
+        <GenreFilter/>
       </div>
       <div>
         <h2>Your Books</h2>

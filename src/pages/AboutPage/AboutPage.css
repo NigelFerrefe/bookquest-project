@@ -6,10 +6,13 @@
   text-align: center;
   padding-bottom: 10px;
   margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
 
   p {
     padding-top: 10px;
     width: 300px;
+    font-size: 18px;
   }
 }
 
@@ -26,7 +29,7 @@
 
 
   h2 {
-    font-size: 16px;
+    font-size: 20px;
     padding-bottom: 10px;
   }
 }
@@ -59,7 +62,7 @@
     gap: 20px;
   }
 
-  .social-links:hover {
+  .social-links img:hover  {
     transform: scale(1.05);
   }
 }

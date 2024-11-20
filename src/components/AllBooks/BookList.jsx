@@ -95,7 +95,7 @@ function AllBooks() {
     );
   };
 
-  console.log("The favourtie book", allBooks.id);
+  
   
   const handleLike = (id) => {
     setIsLike((prev) => ({ ...prev, [id]: !prev[id] }));

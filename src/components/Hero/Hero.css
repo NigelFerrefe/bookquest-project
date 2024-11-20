@@ -13,26 +13,31 @@
   gap: 20px;
   padding-left: 30px;
   padding-bottom: 30px;
+  
 
 
   h1 {
     font-family: "Just Another Hand";
     font-size: 3rem;
+    letter-spacing: 3.5px;
   }
 
   .add-book-button {
+    font-size: 1rem;
     border-style: none;
     width: 12rem;
     padding: 15px;
-    background-color: rgb(60, 60, 60);
+    background-color: rgb(84, 84, 84);
     color: white;
     border-radius: 12px;
     font-family: var(--font-primary);
     margin-left: 40px;
+    transition: transform 0.3s ease, background-color 0.3s ease, font-size 0.3s ease;
   }
   .add-book-button:hover {
     transform: scale(1.05);
-    background-color: rgb(84, 84, 84);
+    background-color: rgb(56, 56, 56);
+    font-size: 1.1rem;
     cursor: pointer;
   }
 }
@@ -41,7 +46,8 @@
   .hero{
     h1 {
       padding-left: 70px;
-      font-size: 4.5rem;
+      font-size: 4rem;
+      letter-spacing: 4px;
     }
 
     .add-book-button {
@@ -58,6 +64,7 @@
     h1 {
       padding-left: 100px;
       font-size: 5.5rem;
+      letter-spacing: 10px;
     }
 
     .add-book-button {

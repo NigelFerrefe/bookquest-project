@@ -32,28 +32,30 @@ function ProfilePage() {
         <div className="profile-info">
           <h2>Your Profile</h2>
           <img width={150} src={Profile} alt="profile-picture" />
-          <p>Name: </p>
-          <p>Favorite author: </p>
-          <p>Reading-Goals: </p>
-          <p>BookLinks: </p>
-        </div>
-        <div className="book-statistics">
-          <p>Books: {`${filteredBooks.length}`} </p>
-        </div>
-        <div className="genres">
-          <p>Genres: </p>
+          <p>Name: Piet</p>
+          <p>Favorite author: Marcel Bosch</p>
+          <p>Reading-Goals: Read a book every month </p>
+          <p>
+            Your Reading Spaces:{" "}
+            <a href="https://www.tomirisllibreria.com/">
+              https://www.tomirisllibreria.com/
+            </a>
+          </p>
+          <div className="books-amount">
+            <h3> Books: {`${filteredBooks.length}`} </h3>
+          </div>
         </div>
       </div>
       <div className="book-titles">
-        <h3>Your Books</h3>
+        <h2>Your Book-Collection</h2>
       </div>
       <div className="books-container">
         {filteredBooks.map((filteredBook) => (
-          <div className="personal-book">
-            <Link to={`/details/${filteredBook.id}`}>
+          <Link to={`/details/${filteredBook.id}`}>
+            <div className="personal-book">
               <BookCard book={filteredBook} />
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
     </section>

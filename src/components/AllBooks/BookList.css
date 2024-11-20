@@ -4,6 +4,19 @@
   align-items: center;
 }
 
+
+
+  .all-books h2 {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+  }
+
+
+
 .carousel-container {
   display: flex;
   align-items: center;
@@ -20,6 +33,7 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
+  align-items: space-evenly;
   flex-direction: column;
   height: 500px;
   width: 240px; /* Center the track container */
@@ -79,15 +93,24 @@
     margin-left: 15px;
     margin-right: 15px;
   }
+  .all-books h2 {
+    margin-left: 30px;
+    text-align: left;
+  }
 }
 
 @media (min-width: 1126px){
   .carousel-track-container {
     width: 100vw;
   }
-   .carousel-button {
-    margin-left: -40px;
-    margin-right: -40px;
+  .carousel-button {
+    margin-left: -60px;
+    margin-right: -10px;
+  }
+  .all-books h2 {
+    margin-left: 40px;
+    text-align: left;
+    font-size: 40px;
   }
 
 }

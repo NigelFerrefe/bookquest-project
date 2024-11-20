@@ -4,13 +4,12 @@
   padding-top: 50px;
   padding-bottom: 50px;
   margin-bottom: 50px;
-  
+
 
 
   .input-search {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    border-right: none;
     width: 50vw;
     padding: 15px 15px 15px 20px;
     font-size: 15px;
@@ -26,7 +25,8 @@
     height: 40px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     border-style: none;
     padding: 15px;
     display: flex;
@@ -34,6 +34,9 @@
     align-items: center;
     background-color: #0094C3;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
 
+  .search-button:hover {
+    transform: scale(1.02);
   }
 }

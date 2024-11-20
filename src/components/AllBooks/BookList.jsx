@@ -90,11 +90,14 @@ function AllBooks() {
 
   return (
     <>
-        <SearchBar />
-      <div className="carousel">
+      <SearchBar />
+      <div className="all-books">
         <h2>All Books</h2>
         <div className="carousel-container">
-          <button onClick={handlePrevAllBooks} className="carousel-button prev-button">
+          <button
+            onClick={handlePrevAllBooks}
+            className="carousel-button prev-button"
+          >
             ‹
           </button>
           <div className="carousel-track-container">
@@ -113,19 +116,26 @@ function AllBooks() {
                 ))}
             </ul>
           </div>
-          <button onClick={handleNextAllBooks} className="carousel-button next-button">
+          <button
+            onClick={handleNextAllBooks}
+            className="carousel-button next-button"
+          >
             ›
           </button>
         </div>
       </div>
-      <div>
-        <h2>Search your books by your favourites genre</h2>
-        <GenreFilter/>
+      <div className="all-books">
+        <h2>Genres</h2>
+        <GenreFilter />
       </div>
-      <div>
+      <div className="all-books">
         <h2>Your Books</h2>
+      </div>
         <div className="carousel-container">
-          <button onClick={handlePrevFilteredBooks} className="carousel-button prev-button">
+          <button
+            onClick={handlePrevFilteredBooks}
+            className="carousel-button prev-button"
+          >
             ‹
           </button>
           <div className="carousel-track-container">
@@ -133,7 +143,7 @@ function AllBooks() {
               {filteredBooks
                 .slice(
                   currentSlideFilteredBooks * booksPerSlidePhone,
-                  (currentSlideFilteredBooks + 3) * booksPerSlidePhone
+                  (currentSlideFilteredBooks + 4) * booksPerSlidePhone
                 )
                 .map((filteredBook) => (
                   <li key={filteredBook.id} className="carousel-slide">
@@ -144,11 +154,13 @@ function AllBooks() {
                 ))}
             </ul>
           </div>
-          <button onClick={handleNextFilteredBooks} className="carousel-button next-button">
+          <button
+            onClick={handleNextFilteredBooks}
+            className="carousel-button next-button"
+          >
             ›
           </button>
         </div>
-      </div>
     </>
   );
 }

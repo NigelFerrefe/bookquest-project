@@ -9,7 +9,7 @@
   align-items: center;
   gap: 10px;
   z-index: 999;
-  width: 220px;
+  width: 240px;
   height: 350px;
   font-size: 17px;
   font-family: var(--font-primary);
@@ -17,6 +17,16 @@
   img {
     width: 150px;
     height: auto;
+  }
+
+  h4 {
+    font-weight: bold;
+    color: #0094C3;
+    font-size: 16px;
+  }
+  p {
+    font-size: 14px;
+    font-weight: bold;
   }
 
 }

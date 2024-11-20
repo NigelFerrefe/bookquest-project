@@ -47,7 +47,7 @@
     font-size: 18px;
     padding: 10px;
     border-radius: 12px;
-    border: 2px solid #0094C3;
+    border: 1px solid #0094C3;
   }
 
   textarea {
@@ -58,7 +58,7 @@
     padding: 10px;
     border-radius: 12px;
     min-height: 70px;
-    border: 2px solid #0094C3;
+    border: 1px solid #0094C3;
   }
 
   select {
@@ -67,27 +67,34 @@
     text-align: center;
     color: #0094C3;
     border-radius: 12px;
-    border: 2px solid #0094C3;
+    border: 1px solid #0094C3;
     font-size: 20px;
 
   }
-  .submit-button {
+  .submit-button, .cancel-button {
     padding: 20px;
     text-align: center;
     width: 230px;
     border-radius: 20px;
     border-style: none ;
-    background-color: #0094C3;
+    background: linear-gradient(var(--color-background-secondary), #015773);
     font-size: 23px;
     color: white;
     margin-left: 20px;
     margin-top: 30px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    text-decoration: none;
   }
 
-  .submit-button:hover {
-    background-color: #1cbbeb;
+  .submit-button:hover, .cancel-button:hover {
+    background: linear-gradient(#015773, var(--color-background-secondary));
     cursor: pointer;
+  }
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: 2px solid var(--color-background-secondary);
   }
 
 }
@@ -109,7 +116,7 @@
       width: 500px;
     }
 
-    .submit-button {
+    .submit-button, .cancel-button {
       width: 400px;
       margin-left: 40px;
     }
@@ -133,7 +140,7 @@
       width: 700px;
     }
 
-    .submit-button {
+    .submit-button, .cancel-button {
       width: 600px;
       margin-left: 40px;
     }

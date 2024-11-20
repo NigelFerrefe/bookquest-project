@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import supabase from "../../supabase/config";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./NewBook.css";
 
 const initialFormData = {
@@ -23,7 +23,10 @@ function NewBookPage() {
 
   async function getAllBooks() {
     try {
-      let response = await supabase.from("books").select("*").eq("isBought", false);
+      let response = await supabase
+        .from("books")
+        .select("*")
+        .eq("isBought", false);
       console.log("Fetched books:", response.data);
     } catch (e) {
       console.log("Something went wrong", e);
@@ -43,16 +46,18 @@ function NewBookPage() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    
     const dataToSubmit = {
       ...formData,
-      genre: typeof formData.genre === "string"
-        ? formData.genre.split(",").map((g) => g.trim())
-        : formData.genre,
+      genre:
+        typeof formData.genre === "string"
+          ? formData.genre.split(",").map((g) => g.trim())
+          : formData.genre,
     };
 
     try {
-      const { data, error } = await supabase.from("books").insert([dataToSubmit]);
+      const { data, error } = await supabase
+        .from("books")
+        .insert([dataToSubmit]);
       if (error) throw error;
 
       console.log("Book created successfully:", data);
@@ -92,10 +97,9 @@ function NewBookPage() {
         <input
           type="text"
           id="genre"
-          value={formData.genre}
+          placeholder="Separate each genre with commas"
           onChange={handleOnChange}
         />
-        <small>Separate each genre with commas</small>
         <label htmlFor="publisher">Publisher: </label>
         <input
           onChange={handleOnChange}
@@ -152,6 +156,9 @@ function NewBookPage() {
         <button className="submit-button" type="submit">
           Add Book
         </button>
+        <Link to="/" className="cancel-button">
+          Cancel
+        </Link>
       </form>
     </div>
   );

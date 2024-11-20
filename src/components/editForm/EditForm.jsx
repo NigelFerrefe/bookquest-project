@@ -60,20 +60,20 @@ function EditForm({ bookDetails, setBookDetails, setIsEditing }) {
 
         <div className="form-tag">
           <label htmlFor="genre">Genre:</label>
+          <small></small>
           <input
             type="text"
             id="genre"
-            value={editBook.genre}
+            placeholder="Separate each genre with commas"
             onChange={(e) => handleInputChange("genre", e.target.value)}
           />
-          <small>Separate each genre with commas, without space</small>
         </div>
 
         <div className="form-tag">
           <label htmlFor="description">Description:</label>
           <textarea
             id="description"
-            rows="2"
+            rows="3"
             value={editBook.description}
             onChange={(e) => handleInputChange("description", e.target.value)}
           />
@@ -152,8 +152,12 @@ function EditForm({ bookDetails, setBookDetails, setIsEditing }) {
         </div>
 
         <div className="btns-form">
-          <button id="green-btn" type="submit">Save changes</button>
-          <button id="red-btn" onClick={() => setIsEditing(false)}>Cancel changes</button>
+          <button id="green-btn" type="submit">
+            Save changes
+          </button>
+          <button id="red-btn" onClick={() => setIsEditing(false)}>
+            Cancel changes
+          </button>
         </div>
       </form>
     </div>

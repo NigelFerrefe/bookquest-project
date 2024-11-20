@@ -1,32 +1,47 @@
 .edit-form {
+  display: flex;
+  flex-direction: column;
   position: fixed;
+  gap: 5px;
+  width: 100%;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
-  padding: 2rem;
-  transition: transform 0.3s ease-in-out;
+  padding: 2.3rem;
   background-color: rgb(216, 216, 216);
 }
 
 .form-tag {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-
   label {
     font-family: var(--font-primary);
     font-weight: 600;
     font-size: 1rem;
   }
   input,
-  textarea,
   select {
     border: 1px solid rgb(33, 33, 33);
     font-family: var(--font-secondary);
     margin: 0 1rem;
     border-radius: 8px;
-    height: 1.6rem;
+    border: 1px solid #0094C3;
+    height: 1.5rem;
     font-size: 0.8rem;
+    width: 15rem;
+    padding: 0 8px;
+  }
+  textarea {
+    border: 1px solid #0094C3;
+    font-family: var(--font-secondary);
+    margin: 0 1rem;
+    border-radius: 8px;
+    height: 5rem;
+    font-size: 0.8rem;
+    width: 15rem;
+    padding: 8px;
   }
 }
 
@@ -52,4 +67,91 @@ button {
 }
 button:hover {
   background-color: #014f59;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-background-secondary);
+}
+
+/*----------------RESPONSIVE QUERY FOR TABLETS----------------*/
+@media (min-width: 650px) and (max-width: 1024px) {
+  .edit-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 3rem 5rem;
+    
+
+  }
+  .form-tag {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+
+    textarea {
+      height: 3rem;
+      font-size: 1rem;
+      width: 18rem;
+    }
+    input,
+    select {
+      height: 1.8rem;
+      font-size: 1rem;
+      width: 18rem;
+
+    }
+  }
+  .btns-form {
+   
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+
+/*----------------RESPONSIVE QUERY FOR DESKTOP----------------*/
+@media (width > 1025px) {
+  .edit-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 3rem 5rem;
+    
+
+  }
+  .form-tag {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    textarea {
+      height: 5rem;
+      font-size: 1.2rem;
+      width: 20rem;
+    }
+    input,
+    select {
+      height: 2rem;
+      font-size: 1.2rem;
+      width: 20rem;
+
+    }
+  }
+  .btns-form {
+    
+    height: 6rem;
+    width: 30rem;
+    gap: 2rem;
+    button {
+      font-size: 1rem;
+    }
+    
+  }
 }

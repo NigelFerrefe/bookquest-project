@@ -45,8 +45,7 @@ function NewBookPage() {
   }
 
   function handleOnChange(e) {
-    const value =
-      e.target.type === "number" ? Number(e.target.value) : e.target.value;
+    const value = e.target.value;
     const field = e.target.id;
 
     setFormData({

@@ -1,0 +1,80 @@
+.genre-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.genre-cards {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .each-book {
+    padding: 1.5rem;
+    border-style: none;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 350px;
+    img {
+      width: 250px;
+    }
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+/*----------------RESPONSIVE QUERY FOR TABLETS----------------*/
+@media (min-width: 650px) and (max-width: 1024px) {
+  .genre-container {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+  .genre-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    .each-book {
+      img {
+        width: 280px;
+      }
+    }
+    a {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/*----------------RESPONSIVE QUERY FOR DESKTOP----------------*/
+@media (width > 1025px) {
+  .genre-container {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  .genre-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .each-book {
+        img {
+          width: 310px;
+        }
+      }
+    a {
+      font-size: 1.4rem;
+    }
+  }
+}

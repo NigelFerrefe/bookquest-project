@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import supabase from "../../supabase/config";
 import BookFilterCard from "../../components/BookFilteredCard/BookFilterCard";
+import "./GenrePage.css"
+
 
 function GenrePage() {
   const { genre } = useParams();
@@ -26,14 +28,14 @@ function GenrePage() {
   }, [genre]);
 
   return (
-    <div>
+    <div className="genre-container">
       <h1>
         {genre.toLocaleUpperCase()} BOOKS
       </h1>
 
-      <div>
+      <div className="genre-cards">
         {genreBooks.map((genreBook) => (
-          <div key={genreBook.id}>
+          <div key={genreBook.id} className="each-book">
             <BookFilterCard genreBook={genreBook} />
           </div>
         ))}

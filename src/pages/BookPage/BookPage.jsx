@@ -46,6 +46,23 @@ function BookDetails() {
 
   const handleClick = () => navigate("/");
 
+  async function deleteBook() {
+    try {
+      await supabase
+        .from("books")
+        .delete()
+        .eq("id", bookDetails.id);
+      alert("The book was deleted successfully.");
+      setBookDetails({});
+      navigate("/");
+    } catch (error) {
+      console.error("This is the error:", error);
+      alert(
+        `It was not possible to delete the book with id: ${bookDetails.id}`
+      );
+    }
+  }
+
   return (
     <>
       <h2 className="title">{title}</h2>
@@ -54,9 +71,9 @@ function BookDetails() {
           <img src={image} alt={`Img of ${title}`} />
           <p className="tags">
             {genre.map((eachGenre, index) => (
-            <Link to={`/genre/${eachGenre}`} key={index}>
-              {eachGenre.toUpperCase()}
-            </Link>
+              <Link to={`/genre/${eachGenre}`} key={index}>
+                {eachGenre.toUpperCase()}
+              </Link>
             ))}
           </p>
         </div>
@@ -116,7 +133,9 @@ function BookDetails() {
               </button>
             </div>
             <div>
-              <button className="btn-detail">Detele book</button>
+              <button onClick={deleteBook} className="btn-detail">
+                Detele book
+              </button>
             </div>
             {/* </div> */}
           </div>

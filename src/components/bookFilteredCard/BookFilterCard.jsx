@@ -5,7 +5,7 @@ function BookFilterCard({ genreBook }) {
     <div>
       <Link to={`/details/${genreBook.id}`}>
         <img width={50} src={genreBook.image} alt={genreBook.title} />
-        <p>{genreBook.title}</p>
+        <p><strong>{genreBook.title}</strong></p>
         <p>{genreBook.author}</p>
       </Link>
     </div>

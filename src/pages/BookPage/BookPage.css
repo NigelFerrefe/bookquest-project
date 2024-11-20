@@ -33,16 +33,15 @@
       border-radius: 1em;
       border: none;
       text-decoration: none;
-      background-color: #015773;
+      background: linear-gradient(var(--color-background-secondary), #015773);
       color: #fff;
       margin: 0.5em;
-      transition: background-color 0.3s, box-shadow 0.3s;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     }
-
-    button:hover {
-      background-color: #343434;
-      box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+    a:hover {
+      background: linear-gradient(#015773, var(--color-background-secondary));
+      cursor: pointer;
+      
     }
   }
 }
@@ -90,13 +89,7 @@
     font-size: 2.5rem;
   }
 
-  .detail-img {
-    .tags {
-      a {
-        font-size: 1rem;
-      }
-    }
-  }
+
 
   .div-btn-details {
     display: flex;
@@ -151,13 +144,7 @@
     gap: 4rem;
   }
 
-  .detail-img {
-    .tags {
-      1 {
-        font-size: 1.2rem;
-      }
-    }
-  }
+
 
   .detail-text {
     font-size: 1.3rem;

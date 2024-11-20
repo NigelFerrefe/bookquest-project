@@ -8,6 +8,7 @@ function BookFilterCard({ genreBook }) {
         <p>{genreBook.title}</p>
         <p>{genreBook.author}</p>
       </Link>
+      <h1>hello</h1>
     </div>
   );
 }

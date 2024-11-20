@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import supabase from "../../supabase/config";
-import BookFilterCard from "../../components/BookFilteredCard/BookFilterCard";
+import BookFilterCard from "../../components/BookFilteredCard/BookFilterCard.jsx";
 import "./GenrePage.css"
 
 

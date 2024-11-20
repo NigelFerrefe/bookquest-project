@@ -1,14 +1,14 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import HomePage from "./pages/HomePage/HomePage"
-import AboutPage from "./pages/AboutPage/AboutPage"
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
-import ProfilePage from "./pages/ProfilePage/ProfilePage"
-import BookPage from "./pages/BookPage/BookPage"
-import NewBookPage from "./pages/NewBookPage/NewBookPage"
-import Navbar from "./components/Navbar/Navbar"
-import Footer from './components/Footer/Footer'
-import GenrePage from './pages/GenrePage/GenrePage'
+import HomePage from "./pages/HomePage/HomePage.jsx"
+import AboutPage from "./pages/AboutPage/AboutPage.jsx"
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx"
+import ProfilePage from "./pages/ProfilePage/ProfilePage.jsx"
+import BookPage from "./pages/BookPage/BookPage.jsx"
+import NewBookPage from "./pages/NewBookPage/NewBookPage.jsx"
+import Navbar from "./components/Navbar/Navbar.jsx"
+import Footer from './components/Footer/Footer.jsx'
+import GenrePage from './pages/GenrePage/GenrePage.jsx'
 
 function App() {
 

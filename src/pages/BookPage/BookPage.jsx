@@ -2,7 +2,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import supabase from "../../supabase/config";
 import "./BookPage.css";
-import EditForm from "../../components/EditForm/EditForm";
+import EditForm from "../../components/EditForm/EditForm.jsx";
 
 function BookDetails() {
   const [bookDetails, setBookDetails] = useState(null);

@@ -1,9 +1,13 @@
-function BookFilterCard({ filteredBook }) {
+import { Link } from "react-router-dom";
+
+function BookFilterCard({ genreBook }) {
   return (
     <div>
-       <img width={50} src={filteredBook.image} alt={filteredBook.title} />
-    <p>{filteredBook.title}</p>
-    <p>{filteredBook.author}</p>
+      <Link to={`/details/${genreBook.id}`}>
+        <img width={50} src={genreBook.image} alt={genreBook.title} />
+        <p>{genreBook.title}</p>
+        <p>{genreBook.author}</p>
+      </Link>
     </div>
   );
 }

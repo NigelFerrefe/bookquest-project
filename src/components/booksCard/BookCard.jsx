@@ -1,4 +1,4 @@
-function BookCard({ book }) {
+function BookCard({ book, }) {
   return (
     <div>
       <img width={200} src={book.image} alt={book.title} />

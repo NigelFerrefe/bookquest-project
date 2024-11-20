@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import profileIcon from "../../assets/profile-icon.png";
-import logo from "../../assets/BookQuest.png";
+import logo from "../../assets/BookquestNew.png";
 import closeBook from "../../assets/close-book.png";
 import openBook from "../../assets/open-book.png";
 import "./Navbar.css";

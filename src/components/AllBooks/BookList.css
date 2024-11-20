@@ -10,7 +10,7 @@
   justify-content: center;
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -18,11 +18,11 @@
 
 .carousel-track-container {
   overflow: hidden;
-  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 500px; /* Center the track container */
+  height: 500px;
+  width: 240px; /* Center the track container */
 }
 
 .carousel-track {
@@ -38,8 +38,9 @@
 }
 
 .carousel-button {
-  background-color: #0094C3;
-  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.272);
+  color: #0094C3;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   cursor: pointer;
   padding: 5px 10px;
   font-size: 1.5rem;
@@ -47,8 +48,13 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;/* Ensure buttons are on top of the carousel */
-  margin-right: -100px;
-  margin-left: -100px;
+  height: 40px;
+  width: 40px;
+  margin-right: 30px;
+  margin-left: 30px;
+  font-weight: bold;
+  border: none;
+  border-style: none;
 }
 
 .prev-button {
@@ -56,9 +62,32 @@
 }
 
 .next-button {
-  right: 10px;
+  right: 0;
 }
 
 .carousel-button:hover {
-  background-color: #eee;
+  background-color: #e4e4e44b;
+  color: #0094C3;
+}
+
+@media (min-width: 650px) and (max-width: 1124px) {
+  .carousel-track-container {
+    width: 720px;
+  }
+
+  .carousel-button {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 1126px){
+  .carousel-track-container {
+    width: 100vw;
+  }
+   .carousel-button {
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+
 }

@@ -1,7 +1,8 @@
 .navbar-container {
-  background-color: var(--color-background-main);
+  background-color: #EEEBE2;
   height: 8rem;
   max-height: 8rem;
+
 }
 #logo-img {
   width: 15rem;
@@ -56,7 +57,7 @@
     position: relative;
     bottom: 0.4rem;
   }
-  
+
 }
 
 /*----------------RESPONSIVE QUERY FOR DESKTOP----------------*/

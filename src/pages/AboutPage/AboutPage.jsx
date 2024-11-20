@@ -1,7 +1,7 @@
-import Piet from "../assets/piet-profile.jpeg";
-import Nigel from "../assets/Nigel-profile-img.png";
-import GithubLogo from "../assets/github-mark.png";
-import Linkedin from "../assets/linkedin.png";
+import Piet from "../../assets/piet-profile.jpeg";
+import Nigel from "../../assets/Nigel-profile-img.png";
+import GithubLogo from "../../assets/github-mark.png";
+import Linkedin from "../../assets/linkedin.png";
 import "./AboutPage.css";
 
 function AboutPage() {

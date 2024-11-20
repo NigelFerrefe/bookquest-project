@@ -1,9 +1,9 @@
-import supabase from "../supabase/config";
+import supabase from "../../supabase/config";
 import { useState, useEffect } from "react";
-import BookCard from "../components/booksCard/BookCard";
+import BookCard from "../../components/BooksCard/BookCard";
 import { Link } from "react-router-dom";
 import "./ProfilePage.css";
-import Profile from "../assets/Profile-picture.png";
+import Profile from "../../assets/Profile-picture.png";
 
 function ProfilePage() {
   const [filteredBooks, setFilteredBooks] = useState([]);
@@ -44,9 +44,9 @@ function ProfilePage() {
           <p>Genres: </p>
         </div>
       </div>
-    <div className="book-titles">
-      <h3>Your Books</h3>
-    </div>
+      <div className="book-titles">
+        <h3>Your Books</h3>
+      </div>
       <div className="books-container">
         {filteredBooks.map((filteredBook) => (
           <div className="personal-book">

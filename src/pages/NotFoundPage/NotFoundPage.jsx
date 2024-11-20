@@ -1,4 +1,4 @@
-import notFoundImg from "../assets/not-found-book.png";
+import notFoundImg from "../../assets/not-found-book.png";
 import "./NotFound.css";
 import { NavLink } from "react-router-dom";
 function NotFoundPage() {

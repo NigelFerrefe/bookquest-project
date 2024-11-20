@@ -1,9 +1,9 @@
 import supabase from "../../supabase/config.js";
 import { useState, useEffect } from "react";
-import BookCard from "../booksCard/BookCard.jsx";
-import BookFilterCard from "../bookFilteredCard/BookFilterCard.jsx";
+import BookCard from "../BooksCard/BookCard.jsx";
+import BookFilterCard from "../BookFilteredCard/BookFilterCard.jsx";
 import { Link, useSearchParams } from "react-router-dom";
-import SearchBar from "../searchbar/SearchBar.jsx";
+import SearchBar from "../Searchbar/SearchBar.jsx";
 import "./BookList.css";
 import GenreFilter from "../GenreFilter/GenreFilter.jsx";
 

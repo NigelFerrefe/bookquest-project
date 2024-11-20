@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import supabase from "../supabase/config";
+import supabase from "../../supabase/config";
 import { NavLink } from "react-router-dom";
 import "./NewBook.css";
 

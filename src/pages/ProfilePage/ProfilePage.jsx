@@ -8,6 +8,10 @@ import Profile from "../../assets/Profile-picture.png";
 function ProfilePage() {
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [favouriteBooks, setFavouriteBooks] = useState([]);
+  const [currentSlideFavouriteBooks, setCurrentSlideFavouriteBooks] =
+    useState(0);
+
+  const booksPerSlidePhone = 1;
 
   async function getFilteredBooks() {
     try {
@@ -27,8 +31,7 @@ function ProfilePage() {
       const response = await supabase
         .from("books")
         .select("*")
-        .eq("isFavourite", true)
-
+        .eq("isFavourite", true);
 
       setFavouriteBooks(response.data);
     } catch (error) {
@@ -41,48 +44,89 @@ function ProfilePage() {
     getFavouriteBooks();
   });
 
+  const totalSlidesFavouriteBooks = Math.ceil(filteredBooks.length / booksPerSlidePhone);
+
+  const handleNextFavouriteBooks = () => {
+    setCurrentSlideFavouriteBooks(
+      (prev) => (prev + 1) % totalSlidesFavouriteBooks
+    );
+  };
+
+  const handlePrevFavouriteBooks = () => {
+    setCurrentSlideFavouriteBooks((prev) =>
+      prev === 0 ? totalSlidesFilteredBooks - 1 : prev - 1
+    );
+  };
+
   return (
-    <section>
-      <div className="yourprofile">
-        <div className="profile-info">
-          <h2>Profile</h2>
-          <img width={150} src={Profile} alt="profile-picture" />
-          <p>Name: Piet-Hein</p>
-          <p>Favorite author: Marcel Bosch</p>
-          <p>Reading-Goals: Read a book every month </p>
-          <p>
-            Your Reading Spaces:{" "}
-            <a href="https://www.tomirisllibreria.com/">
-              tomirisllibreria
-            </a>
-          </p>
-          <div className="books-amount">
-            <h3> Books: {`${filteredBooks.length}`} </h3>
+    <>
+      {/* Profile Section */}
+      <section>
+        <div className="yourprofile">
+          <div className="profile-info">
+            <h2>Profile</h2>
+            <img width={150} src={Profile} alt="profile-picture" />
+            <p>Name: Piet-Hein</p>
+            <p>Favorite Author: Marcel Bosch</p>
+            <p>Reading Goals: Reading a book every month</p>
+            <p>
+              Your Reading Spaces:{" "}
+              <a href="https://www.tomirisllibreria.com/">Tomirisllibreria</a>
+            </p>
+            <div className="books-amount">
+              <h3>Books: {`${filteredBooks.length}`}</h3>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="book-titles">
-        <h2>Your Book-Collection</h2>
-      </div>
-      <div className="books-container">
-        {filteredBooks.map((filteredBook) => (
-          <Link to={`/details/${filteredBook.id}`}>
-            <div className="personal-book">
-              <BookCard book={filteredBook} />
+        <div className="favourite-books">
+          {/* Carousel Section */}
+          <h2>Your Favourite Books</h2>
+          <div className="carousel-container">
+            <div className="carousel-track-container">
+              <button
+                onClick={handlePrevFavouriteBooks}
+                className="carousel-button prev-button"
+              >
+                ‹
+              </button>
+              <ul className="carousel-track">
+                {favouriteBooks
+                  .slice(
+                    currentSlideFavouriteBooks * booksPerSlidePhone,
+                    (currentSlideFavouriteBooks + 4) * booksPerSlidePhone
+                  )
+                  .map((favouriteBook) => (
+                    <li key={favouriteBook.id} className="favourite-book-slide">
+                      <Link to={`/details/${favouriteBook.id}`}>
+                        <BookCard book={favouriteBook} />
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
             </div>
-          </Link>
-        ))}
-      </div>
-      <div className="favourite-books">
-        {favouriteBooks.map((favouriteBook) => (
-          <Link to={`/details/${favouriteBook.id}`}>
-            <div className="personal-book">
-              <BookCard book={favouriteBook} />
-            </div>
-          </Link>
-        ))}
-      </div>
-    </section>
+            <button
+              onClick={handleNextFavouriteBooks}
+              className="carousel-button next-button"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+        {/* Book-collection */}
+        <div className="book-titles">
+          <h2>Book-Collection</h2>
+        </div>
+        <div className="books-container">
+          {filteredBooks.map((filteredBook) => (
+            <Link key={filteredBook.id} to={`/details/${filteredBook.id}`}>
+              <div className="personal-book">
+                <BookCard book={filteredBook} />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
 

@@ -7,6 +7,7 @@ import Profile from "../../assets/Profile-picture.png";
 
 function ProfilePage() {
   const [filteredBooks, setFilteredBooks] = useState([]);
+  const [favouriteBooks, setFavouriteBooks] = useState([]);
 
   async function getFilteredBooks() {
     try {
@@ -21,9 +22,23 @@ function ProfilePage() {
       console.log("Something went wrong", error);
     }
   }
+  async function getFavouriteBooks() {
+    try {
+      const response = await supabase
+        .from("books")
+        .select("*")
+        .eq("isFavourite", true)
+
+
+      setFavouriteBooks(response.data);
+    } catch (error) {
+      console.log("Something went wrong", error);
+    }
+  }
 
   useEffect(() => {
     getFilteredBooks();
+    getFavouriteBooks();
   });
 
   return (
@@ -32,7 +47,7 @@ function ProfilePage() {
         <div className="profile-info">
           <h2>Your Profile</h2>
           <img width={150} src={Profile} alt="profile-picture" />
-          <p>Name: Piet</p>
+          <p>Name: Piet-Hein</p>
           <p>Favorite author: Marcel Bosch</p>
           <p>Reading-Goals: Read a book every month </p>
           <p>
@@ -54,6 +69,15 @@ function ProfilePage() {
           <Link to={`/details/${filteredBook.id}`}>
             <div className="personal-book">
               <BookCard book={filteredBook} />
+            </div>
+          </Link>
+        ))}
+      </div>
+      <div className="favourite-books">
+        {favouriteBooks.map((favouriteBook) => (
+          <Link to={`/details/${favouriteBook.id}`}>
+            <div className="personal-book">
+              <BookCard book={favouriteBook} />
             </div>
           </Link>
         ))}

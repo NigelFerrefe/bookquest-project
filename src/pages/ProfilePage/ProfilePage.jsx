@@ -38,7 +38,7 @@ function ProfilePage() {
           <p>
             Your Reading Spaces:{" "}
             <a href="https://www.tomirisllibreria.com/">
-              https://www.tomirisllibreria.com/
+              tomirisllibreria
             </a>
           </p>
           <div className="books-amount">

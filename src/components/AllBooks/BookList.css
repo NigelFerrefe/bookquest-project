@@ -20,7 +20,9 @@
   overflow: hidden;
   width: 100%;
   display: flex;
-  justify-content: center; /* Center the track container */
+  justify-content: center;
+  flex-direction: column;
+  height: 500px; /* Center the track container */
 }
 
 .carousel-track {
@@ -36,7 +38,7 @@
 }
 
 .carousel-button {
-  background-color: #fff;
+  background-color: #0094C3;
   border: 1px solid #ccc;
   cursor: pointer;
   padding: 5px 10px;
@@ -44,11 +46,13 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1; /* Ensure buttons are on top of the carousel */
+  z-index: 1;/* Ensure buttons are on top of the carousel */
+  margin-right: -100px;
+  margin-left: -100px;
 }
 
 .prev-button {
-  left: 10px;
+  left: 0;
 }
 
 .next-button {

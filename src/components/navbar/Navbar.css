@@ -1,7 +1,8 @@
 .navbar-container {
-  background-color: #EEEBE2;
+  background-color: #ffffff;
   height: 8rem;
   max-height: 8rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 }
 #logo-img {

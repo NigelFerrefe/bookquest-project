@@ -92,8 +92,8 @@ function AllBooks() {
 
   return (
     <>
-        <SearchBar className="search-bar" />
-      <div>
+        <SearchBar />
+      <div className="carousel">
         <h2>All Books</h2>
         <div className="carousel-container">
           <button onClick={handlePrevAllBooks} className="carousel-button prev-button">

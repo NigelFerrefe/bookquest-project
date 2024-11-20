@@ -6,7 +6,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 import ProfilePage from "./pages/ProfilePage/ProfilePage"
 import BookPage from "./pages/BookPage/BookPage"
 import NewBookPage from "./pages/NewBookPage/NewBookPage"
-import Navbar from './components/navbar/Navbar'
+import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import GenrePage from './pages/GenrePage/GenrePage'
 

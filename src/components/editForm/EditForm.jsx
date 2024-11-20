@@ -16,7 +16,7 @@ function EditForm({ bookDetails, setBookDetails, setIsEditing }) {
     e.preventDefault();
     editBook.genre =
       typeof editBook.genre === "string"
-        ? editBook.genre.split(",")
+        ? editBook.genre.split(",").map((genre) => genre.trim())
         : editBook.genre;
 
     try {
@@ -66,7 +66,7 @@ function EditForm({ bookDetails, setBookDetails, setIsEditing }) {
             value={editBook.genre}
             onChange={(e) => handleInputChange("genre", e.target.value)}
           />
-          <small>Separate each genre with commas</small>
+          <small>Separate each genre with commas, without space</small>
         </div>
 
         <div className="form-tag">

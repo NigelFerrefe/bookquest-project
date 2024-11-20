@@ -4,8 +4,8 @@ import businessGenre from "../../assets/business-genre .png";
 import selfHelpGenre from "../../assets/selfhelp-genre.png";
 import "./GenreFilter.css";
 import { Link } from "react-router-dom";
-
 function GenreFilter() {
+
   return (
     <div className="genre-filter-container">
       <div>

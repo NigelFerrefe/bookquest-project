@@ -28,7 +28,7 @@ function GenrePage() {
   return (
     <div>
       <h1>
-        {genre.charAt(0).toUpperCase() + genre.slice(1).toLowerCase()} books
+        {genre.toLocaleUpperCase()} BOOKS
       </h1>
 
       <div>

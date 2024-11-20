@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import supabase from "../../supabase/config";
 import "./BookPage.css";
@@ -44,14 +44,7 @@ function BookDetails() {
     type_of_book,
   } = bookDetails;
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    if (!bookDetails.isBought) {
-      navigate("/"); // Navigate based on whether the book is bought
-    } else {
-      navigate("/");
-    }
-  };
+  const handleClick = () => navigate("/");
 
   return (
     <>
@@ -60,10 +53,11 @@ function BookDetails() {
         <div className="detail-img">
           <img src={image} alt={`Img of ${title}`} />
           <p className="tags">
-            {Array.isArray(genre) &&
-              genre.map((eachGenre, index) => (
-                <button key={index}>{eachGenre.toUpperCase()}</button>
-              ))}
+            {genre.map((eachGenre, index) => (
+            <Link to={`/genre/${eachGenre}`} key={index}>
+              {eachGenre.toUpperCase()}
+            </Link>
+            ))}
           </p>
         </div>
         <div>
@@ -116,14 +110,14 @@ function BookDetails() {
               />
             )}
             {/* <div className="special-btns"> */}
-              <div>
-                <button className="btn-detail" onClick={handleClick}>
-                  Back to your list
-                </button>
-              </div>
-              <div>
-                <button className="btn-detail">Detele book</button>
-              </div>
+            <div>
+              <button className="btn-detail" onClick={handleClick}>
+                Back to your list
+              </button>
+            </div>
+            <div>
+              <button className="btn-detail">Detele book</button>
+            </div>
             {/* </div> */}
           </div>
         </div>

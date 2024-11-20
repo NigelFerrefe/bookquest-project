@@ -26,12 +26,13 @@
     padding: 0 1rem;
     gap: 15px;
 
-    button {
+    a {
       display: inline-block;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
       padding: 0.5em 1em;
       border-radius: 1em;
       border: none;
+      text-decoration: none;
       background-color: #015773;
       color: #fff;
       margin: 0.5em;
@@ -91,8 +92,8 @@
 
   .detail-img {
     .tags {
-      button {
-        font-size: 0.8rem;
+      a {
+        font-size: 1rem;
       }
     }
   }
@@ -152,8 +153,8 @@
 
   .detail-img {
     .tags {
-      button {
-        font-size: 0.9rem;
+      1 {
+        font-size: 1.2rem;
       }
     }
   }

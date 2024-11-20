@@ -143,7 +143,7 @@ function AllBooks() {
         <GenreFilter />
       </div>
       <div className="all-books">
-        <h2>Your Books</h2>
+        <h2>My Books</h2>
       </div>
       <div className="carousel-container">
         <button

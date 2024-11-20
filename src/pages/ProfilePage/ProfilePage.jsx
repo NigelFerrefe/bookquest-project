@@ -45,7 +45,7 @@ function ProfilePage() {
     <section>
       <div className="yourprofile">
         <div className="profile-info">
-          <h2>Your Profile</h2>
+          <h2>Profile</h2>
           <img width={150} src={Profile} alt="profile-picture" />
           <p>Name: Piet-Hein</p>
           <p>Favorite author: Marcel Bosch</p>

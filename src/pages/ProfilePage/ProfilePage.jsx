@@ -61,7 +61,7 @@ function ProfilePage() {
   return (
     <>
       {/* Profile Section */}
-      <section>
+      <section className="main-container">
         <div className="yourprofile">
           <div className="profile-info">
             <h2>Profile</h2>

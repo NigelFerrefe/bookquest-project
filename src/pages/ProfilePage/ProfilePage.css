@@ -1,3 +1,10 @@
+.main-container {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
 .yourprofile {
   display: flex;
   flex-direction: column;
@@ -13,7 +20,7 @@
   gap: 20px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 50px 50px 50px 70px;
-  width: 400px;
+  width: 350px;
   border-radius: 20px;
   background-color: white;
 

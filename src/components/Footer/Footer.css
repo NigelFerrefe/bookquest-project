@@ -10,7 +10,7 @@
   font-family: var(--font-primary);
   height: 5.5rem;
   margin-top: 100px;
-  background-color: white;
+  background-color: rgba(216, 216, 216, 0.421);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   .made-by {
@@ -34,7 +34,6 @@
   text-align: center;
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color: white;
 }
 
 @media (width > 650px){

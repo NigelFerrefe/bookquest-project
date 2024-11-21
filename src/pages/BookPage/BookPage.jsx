@@ -122,7 +122,7 @@ function BookDetails() {
                 setIsEditing={setIsEditing}
               />
             )}
-            {/* <div className="special-btns"> */}
+
             <div>
               <button className="btn-detail" onClick={handleClick}>
                 Back to your list
@@ -160,7 +160,6 @@ function BookDetails() {
                 </div>
               )}
             </div>
-            {/* </div> */}
           </div>
         </div>
       </div>

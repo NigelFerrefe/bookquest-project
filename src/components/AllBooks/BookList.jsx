@@ -15,14 +15,11 @@ function AllBooks() {
   const [currentSlideAllBooks, setCurrentSlideAllBooks] = useState(0);
   const [currentSlideFilteredBooks, setCurrentSlideFilteredBooks] = useState(0);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [isLike, setIsLike] = useState(false);
 
   const booksPerSlidePhone = 1; // Number of books on phones screen
 
   async function getAllBooks() {
     const queryname = searchParams.get("title");
-
-    console.log("this is the query name: ", queryname);
     let response;
 
     try {
@@ -95,18 +92,23 @@ function AllBooks() {
     );
   };
 
-  
-  
-  const handleLike = (id) => {
-    setIsLike((prev) => ({ ...prev, [id]: !prev[id] }));
-    console.log("this book is favourite now");
+  const handleLike = async (id, isFavourite) => {
+    try {
+      await supabase
+        .from("books")
+        .update({ isFavourite: !isFavourite })
+        .match({ id });
+    } catch (error) {
+      console.error("The error: ", error);
+    }
+    getFilteredBooks();
   };
 
   return (
     <>
       <SearchBar />
       <div className="all-books">
-        <h2>All Books</h2>
+        <h2>Select your next bookquest</h2>
         <div className="carousel-container">
           <button
             onClick={handlePrevAllBooks}
@@ -139,11 +141,11 @@ function AllBooks() {
         </div>
       </div>
       <div className="all-books">
-        <h2>Genres</h2>
+        <h2>Books by genre</h2>
         <GenreFilter />
       </div>
       <div className="all-books">
-        <h2>My Books</h2>
+        <h2>Your active bookquest</h2>
       </div>
       <div className="carousel-container">
         <button
@@ -166,11 +168,12 @@ function AllBooks() {
                   </Link>
                   <button
                     className="like-btn"
-                    onClick={() => handleLike(filteredBook.id)}
+                    onClick={() =>
+                      handleLike(filteredBook.id, filteredBook.isFavourite)
+                    }
                   >
                     <img
-                      width={"50px"}
-                      src={isLike[filteredBook.id] ? likeIcon : unlikeIcon}
+                      src={filteredBook.isFavourite ? likeIcon : unlikeIcon}
                       alt="heart icon"
                     />
                   </button>
@@ -188,5 +191,4 @@ function AllBooks() {
     </>
   );
 }
-
 export default AllBooks;

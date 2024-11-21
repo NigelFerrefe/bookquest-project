@@ -9,6 +9,7 @@ function BookDetails() {
   const [isEditing, setIsEditing] = useState(false);
   const { bookId } = useParams();
   const navigate = useNavigate();
+  const [showMessage, setShowMessage] = useState(false);
 
   async function getBookDetail() {
     try {
@@ -45,21 +46,16 @@ function BookDetails() {
   } = bookDetails;
 
   const handleClick = () => navigate("/");
+  const handleMessage = () => setShowMessage(true);
 
   async function deleteBook() {
     try {
-      await supabase
-        .from("books")
-        .delete()
-        .eq("id", bookDetails.id);
-      alert("The book was deleted successfully.");
+      await supabase.from("books").delete().eq("id", bookDetails.id);
+
       setBookDetails({});
       navigate("/");
     } catch (error) {
       console.error("This is the error:", error);
-      alert(
-        `It was not possible to delete the book with id: ${bookDetails.id}`
-      );
     }
   }
 
@@ -133,9 +129,36 @@ function BookDetails() {
               </button>
             </div>
             <div>
-              <button onClick={deleteBook} className="btn-detail">
-                Detele book
+              <button
+                className="btn-detail"
+                id="delete"
+                onClick={handleMessage}
+              >
+                Delete book
               </button>
+              {showMessage && (
+                <div className="screen-message">
+                  <div className="message-container">
+                    <h4>Are you sure you want to leave this bookquest?</h4>
+                    <div className="btns-container">
+                      <button
+                        onClick={deleteBook}
+                        className="btn-message"
+                        id="red-delete"
+                      >
+                        Detele book
+                      </button>
+                      <button
+                        className="btn-message"
+                        onClick={() => setShowMessage(false)}
+                        id="green"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
             {/* </div> */}
           </div>

@@ -35,6 +35,15 @@
   padding-bottom: 8px;
 }
 
+.home-button {
+  background-color: transparent;
+  border-style: none;
+}
+
+.home-button:hover {
+  background-color: transparent;
+}
+
 @media (width > 650px){
   .copyright{
     padding: 8px 0px 8px 30px;

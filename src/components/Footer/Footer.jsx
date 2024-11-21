@@ -4,6 +4,11 @@ import "./Footer.css";
 import { NavLink } from "react-router-dom";
 
 function Footer() {
+  function scrollToTop() {
+    return (
+      window.scrollTo(0, 0)
+    )
+  }
   return (
     <section className="footer">
       <div className="made-by">
@@ -13,8 +18,10 @@ function Footer() {
           </a>
         </div>
         <div className="logo">
-          <NavLink to="/">
+          <NavLink to="/" >
+          <button onClick={scrollToTop} className="home-button">
             <img width={160} src={Logo} alt="book-quest-logo" />
+          </button>
           </NavLink>
         </div>
       </div>

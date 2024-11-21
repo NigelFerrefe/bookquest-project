@@ -6,15 +6,17 @@ import Search from "../../assets/search-icon.png";
 function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+  const [submit, setSubmit] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
     setSearchParams({ title: searchQuery });
     setSearchQuery("");
+    setSubmit(true)
   }
 
   return (
-    <form className="search-bar" onSubmit={handleSubmit}>
+    <form className= "search-bar" onSubmit={handleSubmit} >
       <input
         className="input-search"
         value={searchQuery}
@@ -22,7 +24,8 @@ function SearchBar() {
         type="text"
         placeholder="Search for a Book Title"
       />
-      <button className="search-button" type="submit">
+      <button className="back-button">x</button>
+      <button className= "search-button" type="submit" >
         <img src={Search} alt="Search-icon" />
       </button>
     </form>

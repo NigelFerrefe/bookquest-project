@@ -152,9 +152,9 @@ function AllBooks() {
       <div className="carousel-container">
         <button
           onClick={handlePrevFilteredBooks}
-          className="prev-button"
+          className="carousel-button prev-button"
         >
-        <img src={ChevronLeft} alt="chevron-left" />
+          <img src={ChevronLeft} alt="chevron-left" />
         </button>
         <div className="carousel-track-container">
           <ul className="carousel-track">

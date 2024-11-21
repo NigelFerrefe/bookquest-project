@@ -36,9 +36,26 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
+
   .search-button:hover {
     transform: scale(1.02);
   }
+
+}
+
+.back-button {
+    display: block;
+    background-color: #ffffff;
+    color: rgb(70, 70, 70);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 15px;
+}
+
+.back-button:hover {
+  background-color: white;
 }
 
 @media (width >= 650px) and (width <= 1250px) {

@@ -7,7 +7,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2.3rem;
+  padding: 2rem;
   background-color: rgb(216, 216, 216);
 }
 
@@ -83,12 +83,12 @@ textarea:focus {
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 3rem 5rem;
-    
+    padding: 2rem 2.5rem;
+
 
   }
   .form-tag {
-    
+
     display: flex;
     flex-direction: column;
     padding: 8px 0;
@@ -107,7 +107,7 @@ textarea:focus {
     }
   }
   .btns-form {
-   
+
     width: 100%;
     justify-content: space-evenly;
   }
@@ -123,11 +123,11 @@ textarea:focus {
     flex-wrap: wrap;
     gap: 3rem;
     padding: 3rem 5rem;
-    
+
 
   }
   .form-tag {
-    
+
     display: flex;
     flex-direction: column;
     padding: 8px 0;
@@ -145,13 +145,13 @@ textarea:focus {
     }
   }
   .btns-form {
-    
+
     height: 6rem;
     width: 30rem;
     gap: 2rem;
     button {
       font-size: 1rem;
     }
-    
+
   }
 }

@@ -60,7 +60,7 @@ function BookDetails() {
   }
 
   return (
-    <>
+    <div className="main-detail-container">
       <h2 className="title">{title}</h2>
       <div className="details-container">
         <div className="detail-img">
@@ -164,7 +164,7 @@ function BookDetails() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

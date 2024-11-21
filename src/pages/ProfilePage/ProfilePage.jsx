@@ -4,6 +4,8 @@ import BookCard from "../../components/BooksCard/BookCard";
 import { Link } from "react-router-dom";
 import "./ProfilePage.css";
 import Profile from "../../assets/Profile-picture.png";
+import ChevronLeft from "../../assets/chevron-left.svg";
+import ChevronRight from "../../assets/chevron-right.svg";
 
 function ProfilePage() {
   const [filteredBooks, setFilteredBooks] = useState([]);
@@ -42,9 +44,11 @@ function ProfilePage() {
   useEffect(() => {
     getFilteredBooks();
     getFavouriteBooks();
-  },[]);
+  }, []);
 
-  const totalSlidesFavouriteBooks = Math.ceil(favouriteBooks.length / booksPerSlidePhone);
+  const totalSlidesFavouriteBooks = Math.ceil(
+    favouriteBooks.length / booksPerSlidePhone
+  );
 
   const handleNextFavouriteBooks = () => {
     setCurrentSlideFavouriteBooks(
@@ -64,17 +68,22 @@ function ProfilePage() {
       <section className="main-container">
         <div className="yourprofile">
           <div className="profile-info">
-            <h2>Profile</h2>
-            <img width={150} src={Profile} alt="profile-picture" />
-            <p>Name: Piet-Hein</p>
-            <p>Favorite Author: Marcel Bosch</p>
-            <p>Reading Goals: Reading a book every month</p>
-            <p>
-              Your Reading Spaces:{" "}
-              <a href="https://www.tomirisllibreria.com/">Tomirisllibreria</a>
-            </p>
-            <div className="books-amount">
-              <h3>Books: {`${filteredBooks.length}`}</h3>
+            <div className="user-info">
+              <h2>Profile</h2>
+              <img width={150} src={Profile} alt="profile-picture" />
+              <p>Name: Piet-Hein</p>
+              <p>Favorite Author: Marcel Bosch</p>
+              <p>Reading Goals: Reading a book every month</p>
+              <p>
+                Your Reading Spaces:{" "}
+                <a href="https://www.tomirisllibreria.com/">Tomirisllibreria</a>
+              </p>
+              <p>Don't forget to support your local Libraries!</p>
+            </div>
+            <div className="profile-stats">
+              <div className="books-amount">
+                <h3>Books: {`${filteredBooks.length}`}</h3>
+              </div>
             </div>
           </div>
         </div>
@@ -87,7 +96,7 @@ function ProfilePage() {
                 onClick={handlePrevFavouriteBooks}
                 className="carousel-button prev-button"
               >
-                ‹
+                <img src={ChevronLeft} alt="chevron-left" />
               </button>
               <ul className="carousel-track">
                 {favouriteBooks
@@ -108,7 +117,7 @@ function ProfilePage() {
               onClick={handleNextFavouriteBooks}
               className="carousel-button next-button"
             >
-              ›
+              <img src={ChevronRight} alt="chevron-right" />
             </button>
           </div>
         </div>

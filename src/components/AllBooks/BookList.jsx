@@ -8,6 +8,8 @@ import "./BookList.css";
 import GenreFilter from "../GenreFilter/GenreFilter.jsx";
 import unlikeIcon from "../../assets/heart-unlike.png";
 import likeIcon from "../../assets/heart-like.png";
+import ChevronLeft from "../../assets/chevron-left.svg"
+import ChevronRight from "../../assets/chevron-right.svg"
 
 function AllBooks() {
   const [allBooks, setAllBooks] = useState([]);
@@ -114,7 +116,7 @@ function AllBooks() {
             onClick={handlePrevAllBooks}
             className="carousel-button prev-button"
           >
-            ‹
+            <img src={ChevronLeft} alt="chevron-left" />
           </button>
           <div className="carousel-track-container">
             <ul className="carousel-track">
@@ -136,7 +138,7 @@ function AllBooks() {
             onClick={handleNextAllBooks}
             className="carousel-button next-button"
           >
-            ›
+            <img src={ChevronRight} alt="chevron-right" />
           </button>
         </div>
       </div>
@@ -150,9 +152,9 @@ function AllBooks() {
       <div className="carousel-container">
         <button
           onClick={handlePrevFilteredBooks}
-          className="carousel-button prev-button"
+          className="prev-button"
         >
-          ‹
+        <img src={ChevronLeft} alt="chevron-left" />
         </button>
         <div className="carousel-track-container">
           <ul className="carousel-track">
@@ -175,6 +177,7 @@ function AllBooks() {
                     <img
                       src={filteredBook.isFavourite ? likeIcon : unlikeIcon}
                       alt="heart icon"
+                      className={filteredBook.isFavourite ? "liked" : ""}
                     />
                   </button>
                 </li>
@@ -185,7 +188,7 @@ function AllBooks() {
           onClick={handleNextFilteredBooks}
           className="carousel-button next-button"
         >
-          ›
+          <img src={ChevronRight} alt="chevron-right" />
         </button>
       </div>
     </>

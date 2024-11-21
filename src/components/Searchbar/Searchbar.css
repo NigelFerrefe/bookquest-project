@@ -10,7 +10,7 @@
   .input-search {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    width: 50vw;
+    width: 70vw;
     padding: 15px 15px 15px 20px;
     font-size: 15px;
     color: rgb(82, 82, 82);
@@ -39,4 +39,26 @@
   .search-button:hover {
     transform: scale(1.02);
   }
+}
+
+@media (width >= 650px) and (width <= 1250px) {
+  .search-bar {
+    .input-search {
+      width: 60vw;
+    }
+
+  }
+
+}
+
+
+@media (min-width: 1250px) {
+  .search-bar {
+    .input-search {
+      width: 45vw;
+    }
+
+  }
+
+
 }

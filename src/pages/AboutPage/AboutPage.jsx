@@ -51,8 +51,8 @@ function AboutPage() {
           <h2>Piet-Hein Schouten</h2>
           <img className="image-piet" width={100} src={Piet} alt="Linkedin" />
           <p>
-            Hi! I’m Piet-Hein, a web developer with a strong foundation in
-            entrepreneurship and a passion for building engaging, user-friendly
+            Hi! I’m Piet-Hein, a web developer with a background in
+            marketing and entrepeneurship. I also have a passion for building engaging, user-friendly
             digital experiences. I’m passionate about combining my technical
             skills with a strategic business mindset, always aiming to bridge
             the gap between innovative tech and practical, user-centered design.

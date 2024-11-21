@@ -44,7 +44,7 @@ function ProfilePage() {
     getFavouriteBooks();
   });
 
-  const totalSlidesFavouriteBooks = Math.ceil(filteredBooks.length / booksPerSlidePhone);
+  const totalSlidesFavouriteBooks = Math.ceil(favouriteBooks.length / booksPerSlidePhone);
 
   const handleNextFavouriteBooks = () => {
     setCurrentSlideFavouriteBooks(
@@ -54,7 +54,7 @@ function ProfilePage() {
 
   const handlePrevFavouriteBooks = () => {
     setCurrentSlideFavouriteBooks((prev) =>
-      prev === 0 ? totalSlidesFilteredBooks - 1 : prev - 1
+      prev === 0 ? totalSlidesFavouriteBooks - 1 : prev - 1
     );
   };
 

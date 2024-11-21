@@ -41,7 +41,6 @@
     a:hover {
       background: linear-gradient(#015773, var(--color-background-secondary));
       cursor: pointer;
-      
     }
   }
 }
@@ -83,13 +82,68 @@
   cursor: pointer;
 }
 
+.screen-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: var(--color-background-main);
+  padding: 1rem;
+  border: 1px solid #000;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+  h4 {
+    font-size: 1.2rem;
+  }
+}
+.btns-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+.btn-message {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: var(--color-background-main);
+  border-radius: 10px;
+  background: linear-gradient(var(--color-background-secondary), #015773);
+  border: none;
+  transition: background 0.3s ease, font-size 0.3s ease;
+}
+.btn-message:hover {
+  background: linear-gradient(var(--color-background-secondary), #015773);
+  cursor: pointer;
+}
+#red-delete:hover,
+#delete:hover {
+  background: linear-gradient(#890000, #f00303);
+  cursor: pointer;
+}
+#green:hover {
+  background: linear-gradient(#098900, #22f003);
+  cursor: pointer;
+}
+
 /*----------------RESPONSIVE QUERY FOR TABLETS----------------*/
 @media (min-width: 650px) and (max-width: 1024px) {
   .title {
     font-size: 2.5rem;
   }
-
-
 
   .div-btn-details {
     display: flex;
@@ -97,7 +151,7 @@
     align-items: center;
     padding: 1rem 2rem;
   }
-  
+
   .detail-text {
     font-size: 1.2rem;
   }
@@ -108,6 +162,20 @@
   }
 
   .detail:hover {
+    font-size: 1.2rem;
+  }
+  .message-container {
+    width: 60%;
+    h4 {
+      font-size: 1.4rem;
+    }
+  }
+  .btns-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .btn-message {
     font-size: 1.2rem;
   }
 }
@@ -124,6 +192,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    font-size: 1.3rem;
   }
   .title {
     font-size: 3rem;
@@ -144,18 +213,26 @@
     gap: 4rem;
   }
 
-
-
-  .detail-text {
-    font-size: 1.3rem;
-  }
-
   .btn-detail {
     font-size: 1.2rem;
     width: 15rem;
   }
 
   .btn-detail:hover {
+    font-size: 1.4rem;
+  }
+  .message-container {
+    width: 50%;
+    h4 {
+      font-size: 1.6rem;
+    }
+  }
+  .btns-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .btn-message {
     font-size: 1.4rem;
   }
 }

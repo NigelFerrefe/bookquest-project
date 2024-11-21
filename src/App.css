@@ -1,6 +1,5 @@
 body {
    background: linear-gradient(to right, #ffff , #FFF8EA);
-   max-width: 100vw;
    overflow-x: hidden !important;
    width: 100vw;
 }

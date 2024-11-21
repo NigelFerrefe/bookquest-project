@@ -42,7 +42,7 @@ function ProfilePage() {
   useEffect(() => {
     getFilteredBooks();
     getFavouriteBooks();
-  });
+  },[]);
 
   const totalSlidesFavouriteBooks = Math.ceil(favouriteBooks.length / booksPerSlidePhone);
 

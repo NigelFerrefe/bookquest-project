@@ -1,4 +1,6 @@
 .main-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   overflow-x: hidden;
 }
@@ -114,7 +116,6 @@
  flex-direction: column;
  gap: 10px;
  background-color: rgb(246, 246, 232);
- margin-bottom: -100px;
  background-color: #FFF8EA;
 
 }
@@ -165,9 +166,7 @@
       font-size: 18px;
     }
 
-    img {
-    margin-top: -90px;
-  }
+
   }
 
 
@@ -211,9 +210,6 @@
       font-size: 20px;
     }
 
-    img {
-    margin-top: -90px;
-  }
   }
 
   .favourite-books {

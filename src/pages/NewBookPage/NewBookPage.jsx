@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+// you can avoid importing the useEffect because you are not using it
 import supabase from "../../supabase/config";
 import { useNavigate, Link } from "react-router-dom";
 import "./NewBook.css";
 
-const initialFormData = {
+const initialFormData = { // good job on creating the initialFormData object
   title: "",
   author: "",
   genre: [],
@@ -34,12 +35,14 @@ function NewBookPage() {
   }
 
   function handleOnChange(e) {
+    // well done on the handleOnChange function
+    // it's simple and easy to understand
     const value = e.target.value;
     const field = e.target.id;
 
     setFormData({
-      ...formData,
-      [field]: value,
+      ...formData, // this is the previous state
+      [field]: value, // this is the new value [fo]
     });
   }
 
@@ -50,7 +53,7 @@ function NewBookPage() {
       ...formData,
       genre:
         typeof formData.genre === "string"
-          ? formData.genre.split(",").map((g) => g.trim())
+          ? formData.genre.split(",").map((g) => g.trim()) // good job on splitting the genres and trimming them
           : formData.genre,
     };
 
@@ -60,7 +63,13 @@ function NewBookPage() {
         .insert([dataToSubmit]);
       if (error) throw error;
 
-      console.log("Book created successfully:", data);
+      console.log("Book created successfully:", data); 
+      /*
+        Users are not going to see this console.log
+        You can show a message to the user that the book was created successfully
+        and delete the console.log
+        (as a developer you can see the network tab in the browser to see the response)
+      */
       getAllBooks();
       setFormData(initialFormData);
       navigate("/");

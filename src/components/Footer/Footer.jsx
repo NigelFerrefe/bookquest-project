@@ -6,7 +6,8 @@ import { NavLink } from "react-router-dom";
 function Footer() {
   function scrollToTop() {
     return (
-      window.scrollTo(0, 0)
+      window.scrollTo(0, 0) // well done! this is a simple and effective way to scroll to the top of the pageç
+      // you can also make the scroll smooth by using window.scrollTo({ top: 0, behavior: 'smooth' }
     )
   }
   return (

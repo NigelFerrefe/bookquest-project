@@ -122,7 +122,12 @@ function BookDetails() {
                 setIsEditing={setIsEditing}
               />
             )}
-            {/* <div className="special-btns"> */}
+            {/* <div className="special-btns"> 
+
+              It's a bit hard to understand the structure of this component with
+              all this divs, consider using a more semantic structure like article, section, etc.
+              Also, you can create more smaller components 
+            */}
             <div>
               <button className="btn-detail" onClick={handleClick}>
                 Back to your list

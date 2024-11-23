@@ -21,7 +21,7 @@ function AllBooks() {
   const booksPerSlidePhone = 1; // Number of books on phones screen
 
   async function getAllBooks() {
-    const queryname = searchParams.get("title");
+    const queryname = searchParams.get("title"); // in combination with the SearchBar component, you are able to get the title from the search bar
     let response;
 
     try {
@@ -94,6 +94,10 @@ function AllBooks() {
     );
   };
 
+  /*
+    The functionality for the carousel is working. Can it be refactored to make it more readable?
+  */
+
   const handleLike = async (id, isFavourite) => {
     try {
       await supabase
@@ -161,7 +165,7 @@ function AllBooks() {
             {filteredBooks
               .slice(
                 currentSlideFilteredBooks * booksPerSlidePhone,
-                (currentSlideFilteredBooks + 4) * booksPerSlidePhone
+                (currentSlideFilteredBooks + 4) * booksPerSlidePhone // this logic could be extracted to a function
               )
               .map((filteredBook) => (
                 <li key={filteredBook.id} className="carousel-slide">

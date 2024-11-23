@@ -10,9 +10,9 @@ function SearchBar() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setSearchParams({ title: searchQuery });
+    setSearchParams({ title: searchQuery }); // nice!
     setSearchQuery("");
-    setSubmit(true)
+    setSubmit(true) // you are changing the state of submit to true, but I don't see where you use the submit state
   }
 
   return (

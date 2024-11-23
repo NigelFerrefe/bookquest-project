@@ -10,9 +10,10 @@ function GenrePage() {
   const [genreBooks, setGenreBooks] = useState([]);
 
   useEffect(() => {
+    // the useEffect is well written and the code is clean
     async function fetchBooksByGenre() {
       try {
-        const { data, error } = await supabase
+        const { data, error } = await supabase // you used the supabase as it is in their documentation, make sure you understand it!
           .from("books")
           .select("*")
           .contains("genre", [genre]);

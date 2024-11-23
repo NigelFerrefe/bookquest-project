@@ -11,7 +11,7 @@ import Footer from './components/Footer/Footer.jsx'
 import GenrePage from './pages/GenrePage/GenrePage.jsx'
 
 function App() {
-
+  // the app component is very clean and simple, well done! 
 
   return (
     <>
